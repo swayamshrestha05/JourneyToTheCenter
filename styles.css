@@ -273,9 +273,11 @@ a { color: var(--magma); text-underline-offset: .2em; }
   /* fade the photo's lower slopes into the Summit section's ground (#1e1c24) so there is no hard edge */
   .hero-photo::after {
     background:
-      linear-gradient(180deg, rgba(30, 28, 36, 0) 62%, rgba(30, 28, 36, .35) 74%, rgba(30, 28, 36, .8) 88%, #1e1c24 100%),
+      linear-gradient(180deg, rgba(30, 28, 36, 0) 66%, rgba(30, 28, 36, .35) 80%, rgba(30, 28, 36, .8) 92%, #1e1c24 100%),
       linear-gradient(90deg, rgba(10, 12, 30, .55) 0%, rgba(10, 12, 30, .3) 40%, rgba(10, 12, 30, 0) 62%);
   }
+  /* the hero already fades into the Summit ground, so the section needs little top padding */
+  .layer.summit { padding-top: 24px; }
   .hero .fx { -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, #000 80%, transparent 100%); }
 }
 .hero-copy { z-index: 2; padding-top: clamp(80px, 14vh, 140px); padding-bottom: 320px; }
