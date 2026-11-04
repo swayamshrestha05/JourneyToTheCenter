@@ -58,7 +58,7 @@
 
   // reduced motion: hold the summit flag still
   var heroRange = hero.querySelector(".range");
-  if (reduced && heroRange.pauseAnimations) heroRange.pauseAnimations();
+  if (reduced && heroRange && heroRange.pauseAnimations) heroRange.pauseAnimations();
 
   var peakSign = hero.querySelector(".sign-peak");
   var peakAnchor = hero.querySelector('[data-anchor="summit"]');

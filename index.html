@@ -65,51 +65,20 @@
     </svg>
   </span>
 
-  <!-- ============ HERO: EVEREST AT DAWN ============ -->
+  <!-- ============ HERO: EVEREST AT SUNSET (photograph) ============ -->
   <header class="hero" id="top" data-stop data-name="Summit of Mount Everest" data-mode="Altitude" data-depth="8,849 m" data-temp="below −30 °C" data-at="at the summit" data-from="-8.849" data-to="-8.849">
+    <div class="hero-photo">
+      <div class="hero-photo-frame">
+        <img src="assets/sunset-view-of-everest.jpg" width="2560" height="1707" alt="Mount Everest's summit glowing orange at sunset, above snow-covered peaks, a glacier and dark rocky ground" fetchpriority="high" decoding="async">
+        <span class="summit-anchor" data-anchor="summit"></span>
+      </div>
+    </div>
     <canvas class="fx" data-fx="snow" aria-hidden="true"></canvas>
     <div class="wrap hero-copy">
       <h1>Journey to the <em>Center</em> of the Earth</h1>
       <p class="lede">You’re standing on the highest point on Earth. Scroll to follow the trail straight down, through the crust, the mantle and the liquid outer core, to the edge of the solid inner core.</p>
       <a class="cue" href="#summit"><span class="cue-line"></span>Scroll to start the descent</a>
     </div>
-    <svg class="range" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="alpen" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#fff1e6"/>
-          <stop offset=".45" stop-color="#ffc4a8"/>
-          <stop offset="1" stop-color="#e98a7c"/>
-        </linearGradient>
-        <linearGradient id="massif" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#3a3560"/>
-          <stop offset="1" stop-color="#25233e"/>
-        </linearGradient>
-      </defs>
-      <path d="M0 360 L0 210 L120 170 L230 205 L330 140 L420 175 L520 120 L600 160 L690 110 L760 150 L860 100 L960 150 L1060 115 L1160 170 L1270 130 L1360 175 L1440 150 L1440 360Z" fill="#6a4a72" opacity=".7"/>
-      <path d="M0 360 L0 250 L140 215 L260 245 L380 180 L470 205 L560 140 L640 180 L720 34 L775 108 L820 92 L900 160 L1000 140 L1100 210 L1220 175 L1340 225 L1440 200 L1440 360Z" fill="url(#massif)"/>
-      <!-- sunlit west faces: alpenglow from a low sun -->
-      <path d="M720 34 L640 180 L668 172 L700 196 L724 120 Z" fill="url(#alpen)" opacity=".55"/>
-      <path d="M720 34 L672 108 L692 100 L706 124 L724 92 L748 118 L762 100 L775 108 Z" fill="url(#alpen)"/>
-      <path d="M560 140 L535 168 L552 164 L566 176 L580 160 L600 170 L640 180 Z" fill="#f4c2ae" opacity=".8"/>
-      <path d="M820 92 L806 112 L826 108 L840 120 L860 116 Z" fill="#f4c2ae" opacity=".8"/>
-      <path d="M720 34 L775 108 L820 92" fill="none" stroke="#fff6ee" stroke-width="1.5" opacity=".7"/>
-      <path d="M0 360 L0 300 L180 270 L320 300 L460 262 L600 292 L720 270 L860 300 L1000 272 L1160 300 L1300 276 L1440 296 L1440 360Z" fill="#1e1c24"/>
-      <!-- Nepal's flag planted on the summit -->
-      <g class="summit-flag">
-        <line x1="720" y1="34" x2="720" y2="-7" stroke="#2e2838" stroke-width="1.4"/>
-        <g transform="translate(720.7 -6.5) scale(.62)">
-          <!-- the double pennant ripples in the wind: same command structure in every frame so the path morphs -->
-          <path d="M0 0 Q11 6 21 14 L8 14 Q15 22 21 30 L0 30 Z" fill="#dc143c" stroke="#003893" stroke-width="2.2" stroke-linejoin="round" paint-order="stroke">
-            <animate attributeName="d" dur="1.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"
-              values="M0 0 Q11 6 21 14 L8 14 Q15 22 21 30 L0 30 Z;
-                      M0 0 Q14 12 23 17 L8 15 Q11 19 23 33 L0 30 Z;
-                      M0 0 Q8 1 19 11 L8 13 Q17 26 19 27 L0 30 Z;
-                      M0 0 Q11 6 21 14 L8 14 Q15 22 21 30 L0 30 Z"/>
-          </path>
-        </g>
-      </g>
-      <circle data-anchor="summit" cx="720" cy="34" r="1" fill="none"/>
-    </svg>
     <button class="sign sign-peak" type="button" data-sign="summit" aria-controls="summit-more" aria-expanded="false" aria-label="Summit, 8,849 m: show more summit facts">
       <span class="sign-dot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8 H12 M8 4 V12"/></svg></span>
       <span class="sign-depth">8,849 m</span>
@@ -414,7 +383,7 @@
         <li>Scharping, Nathaniel. 2025. “How to Build the World’s Highest Mountain.” <i>Eos</i> 106.</li>
         <li>Turner, Bethan, Jennifer Jenkins, Rebecca Turner, et al. 2013. “Seismicity of the Earth 1900–2010 Himalaya and Vicinity.” Reston, VA: U.S. Geological Survey, Open-File Report 2010-1083-J, version 1.1.</li>
       </ol>
-      <p class="credits">Photographs: <a href="https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">“Everest North Face toward Base Camp Tibet”</a> by Luca Galuzzi, <a href="https://creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5</a>; <a href="https://commons.wikimedia.org/wiki/File:Himalayas.jpg">“Himalayas”</a> by NASA, <a href="https://creativecommons.org/publicdomain/mark/1.0/">public domain</a>; <a href="https://commons.wikimedia.org/wiki/File:Olivine_Crystals_from_El_Golfo_on_Lanzarote.jpg">“Olivine Crystals from El Golfo on Lanzarote”</a> by Jan Helebrant, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Diamond_in_kimberlite_(Mir_Kimberlite_Pipe,_Malo-Botuoba_Kimberlite_Field,_~354-360_Ma;_Mir_Diamond_Mine,_Siberia,_Russia)_(17440851983).jpg">“Diamond in kimberlite”</a> by James St. John, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. All via Wikimedia Commons.</p>
+      <p class="credits">Photographs: <a href="https://commons.wikimedia.org/wiki/File:Sunset_view_of_Everest.jpg">“Sunset view of Everest”</a> by Nir B. Gurung, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">“Everest North Face toward Base Camp Tibet”</a> by Luca Galuzzi, <a href="https://creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5</a>; <a href="https://commons.wikimedia.org/wiki/File:Himalayas.jpg">“Himalayas”</a> by NASA, <a href="https://creativecommons.org/publicdomain/mark/1.0/">public domain</a>; <a href="https://commons.wikimedia.org/wiki/File:Olivine_Crystals_from_El_Golfo_on_Lanzarote.jpg">“Olivine Crystals from El Golfo on Lanzarote”</a> by Jan Helebrant, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Diamond_in_kimberlite_(Mir_Kimberlite_Pipe,_Malo-Botuoba_Kimberlite_Field,_~354-360_Ma;_Mir_Diamond_Mine,_Siberia,_Russia)_(17440851983).jpg">“Diamond in kimberlite”</a> by James St. John, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>. All via Wikimedia Commons.</p>
       <p class="fine">All depths and temperatures are approximate, taken from the sources above. The gauge shows each stop’s sourced values. The page spacing, trail, illustrations and animations are not to scale.</p>
     </div>
   </section>
