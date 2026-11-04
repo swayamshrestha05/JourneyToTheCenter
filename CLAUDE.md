@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-page, scroll-driven geology class website: "Journey to the center of the Earth", descending from the summit of Mount Everest to the inner-core boundary. Plain static HTML/CSS/JS (`index.html`, `styles.css`, `script.js`), no framework, no build step, no package manager. Fonts are self-hosted in `fonts/`. Open `index.html` directly in a browser (or serve the folder with any static server) to view it. Not a git repo; deploy host undecided.
+A single-page, scroll-driven geology class website: "Journey to the center of the Earth", descending from the summit of Mount Everest to the inner-core boundary. Plain static HTML/CSS/JS (`index.html`, `styles.css`, `script.js`), no framework, no build step, no package manager. Fonts are self-hosted in `fonts/`. Open `index.html` directly in a browser (or serve the folder with any static server) to view it. Tracked with git (see Git workflow below); deploy host undecided.
 
 `PRODUCT.md` is the product brief; `.impeccable/surfaces/index-html.md` holds the current visual direction contract (dawn sky → layer colours, dotted magma trail, fixed depth gauge). Read both before design changes.
 
@@ -16,6 +16,14 @@ python -X utf8 scripts/check_page.py    # every claim in facts.json appears verb
 ```
 
 On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There are no other tests, linters or builds.
+
+## Git workflow
+
+- Remote: `origin` = github.com/swayamshrestha05/JourneyToTheCenter (private), branch `main`.
+- When a feature or change is finished, run both checks above, then make **one local commit** for it with a clear message.
+- **Never push.** The user reviews each local commit (`git log origin/main..main`, `git show <hash>`) and pushes to GitHub themselves, or explicitly asks for a push.
+- After committing, report the commit hash and a short summary of what it contains.
+- `.gitignore` excludes `.claude/`, `.cursor/` (locally installed Impeccable tooling and settings) and Impeccable's local runtime state; keep them out of commits.
 
 ## Content rules (the core constraint)
 
