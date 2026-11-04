@@ -1,0 +1,13 @@
+# Locally installed tooling (Impeccable skill, agents, binaries) and local settings
+.claude/
+.cursor/
+
+# Impeccable local runtime state
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/questions/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+__pycache__/

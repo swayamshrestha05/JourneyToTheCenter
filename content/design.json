@@ -1,0 +1,7 @@
+{
+  "_note": "Presentation choices only (NOT sourced facts). Nothing here may be shown to the reader as a scientific claim.",
+  "title": "Journey to the Center of the Earth: Starting from the Top of the World",
+  "animations": ["Indian plate subducting under the Eurasian plate", "Mantle convection (optional backup)"],
+  "gauges": ["depth", "temperature"],
+  "sectionOrder": ["everest", "himalaya", "convection", "layers", "temperature"]
+}

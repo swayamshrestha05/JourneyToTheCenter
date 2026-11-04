@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summit Trail to the Core</title>
+<meta name="description" content="An illustrated trail from the summit of Mount Everest down through the crust, mantle and outer core to the edge of Earth's inner core.">
+<meta name="theme-color" content="#1c1d4a">
+<link rel="preload" href="fonts/zilla-slab-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/overpass-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#summit-panel">Skip to the first stop</a>
+
+<main id="map">
+  <!-- Trail overlay: built by script.js from the sign positions -->
+  <svg class="trail" id="trail" aria-hidden="true" focusable="false">
+    <defs>
+      <mask id="trail-reveal" maskUnits="userSpaceOnUse">
+        <path id="trail-mask" fill="none" stroke="#fff" stroke-width="28" stroke-linecap="round"/>
+      </mask>
+    </defs>
+    <g mask="url(#trail-reveal)">
+      <path id="trail-halo" class="trail-halo" fill="none"/>
+      <path id="trail-dots" class="trail-dots" fill="none"/>
+    </g>
+    <path id="trail-ghost" class="trail-ghost" fill="none"/>
+  </svg>
+  <div class="here" id="here" aria-hidden="true">
+    <span class="here-dot"></span>
+    <span class="here-tag"><span class="here-label">You are here</span><span class="here-val" id="here-val">Summit · +8,849 m · below −30 °C</span></span>
+  </div>
+
+  <!-- ============ 1. SUMMIT ============ -->
+  <section class="stop stop-summit" id="summit" data-tag="Summit · +8,849 m · below −30 °C" aria-labelledby="summit-title">
+    <div class="scene" aria-hidden="true">
+      <svg class="dawn" viewBox="0 0 1440 1700" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <radialGradient id="sun-glow" cx="300" cy="790" r="620" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff0c2" stop-opacity=".95"/>
+            <stop offset=".18" stop-color="#ffc77f" stop-opacity=".7"/>
+            <stop offset=".55" stop-color="#f08a6c" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#f08a6c" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="lit-face" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff1e4"/>
+            <stop offset=".35" stop-color="#ffc6a6"/>
+            <stop offset="1" stop-color="#e98579"/>
+          </linearGradient>
+          <linearGradient id="shade-face" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7e78b4"/>
+            <stop offset="1" stop-color="#46437c"/>
+          </linearGradient>
+          <linearGradient id="massif" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5a4682"/>
+            <stop offset=".6" stop-color="#3d2f5e"/>
+            <stop offset="1" stop-color="#2c2244"/>
+          </linearGradient>
+          <linearGradient id="far-ridge" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#a0628a"/>
+            <stop offset="1" stop-color="#7a4d82"/>
+          </linearGradient>
+        </defs>
+        <rect class="sun-glow" x="-200" y="200" width="1100" height="1200" fill="url(#sun-glow)"/>
+        <circle cx="300" cy="800" r="56" fill="#fff3cf"/>
+        <g class="clouds" fill="#f9b1a1">
+          <path opacity=".55" d="M40 560 q180 -26 360 -6 q120 12 260 -4 l0 10 q-150 18 -270 8 q-180 -16 -350 4z"/>
+          <path opacity=".4" d="M820 640 q160 -22 330 -4 q90 8 250 -6 l0 9 q-140 16 -250 8 q-170 -14 -330 4z"/>
+          <path opacity=".35" d="M200 690 q120 -14 260 -2 l0 7 q-130 10 -260 2z"/>
+        </g>
+        <path d="M-40 900 L120 820 L210 850 L330 770 L420 812 L520 760 L610 806 L700 770 L760 800 L1480 840 L1480 1700 L-40 1700Z" fill="url(#far-ridge)"/>
+        <!-- Everest massif -->
+        <path d="M-40 1050 L180 930 L300 960 L470 760 L560 800 L640 610 L720 660 L900 420 L1010 560 L1080 540 L1180 470 L1290 600 L1380 620 L1480 700 L1480 1700 L-40 1700Z" fill="url(#massif)"/>
+        <!-- shaded east faces -->
+        <path d="M900 420 L1010 560 L1080 540 L1180 470 L1290 600 L1380 620 L1480 700 L1480 1180 L1120 1060 L960 860 Z" fill="url(#shade-face)"/>
+        <path d="M640 610 L720 660 L760 760 L700 900 L640 760Z" fill="#5d5994"/>
+        <!-- sunlit west faces: alpenglow -->
+        <path d="M900 420 L960 860 L860 760 L780 830 L720 660 Z" fill="url(#lit-face)"/>
+        <path d="M640 610 L640 760 L560 880 L520 820 L560 800Z" fill="url(#lit-face)" opacity=".9"/>
+        <path d="M1180 470 L1200 640 L1150 600 L1110 660 L1080 540Z" fill="url(#lit-face)" opacity=".85"/>
+        <path d="M470 760 L500 860 L420 900 L380 880Z" fill="url(#lit-face)" opacity=".7"/>
+        <!-- rock bands and ridge lines -->
+        <path d="M940 690 L1040 720 L1120 700 L1180 760" fill="none" stroke="#3a2f55" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+        <path d="M860 760 L900 700 L930 740" fill="none" stroke="#c46c6c" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+        <path d="M900 420 L960 860" stroke="#fff6ee" stroke-width="4" opacity=".85"/>
+        <path d="M900 420 L720 660 L640 610" fill="none" stroke="#fff6ee" stroke-width="3" opacity=".8"/>
+        <!-- lower flanks, darkening into the cut -->
+        <path d="M-40 1250 C 260 1180 520 1260 760 1220 C 1000 1180 1240 1250 1480 1210 L1480 1700 L-40 1700Z" fill="#2c2244" opacity=".55"/>
+        <!-- cross-section cut at sea level -->
+        <rect x="-40" y="1590" width="1520" height="110" fill="#a8643a"/>
+        <path d="M-40 1590 H1480" stroke="#2a1a12" stroke-width="5"/>
+        <circle data-anchor="summit" cx="900" cy="420" r="2" fill="none"/>
+      </svg>
+      <canvas class="fx" data-fx="snow"></canvas>
+    </div>
+
+    <header class="legend" aria-labelledby="site-title">
+      <h1 id="site-title">Summit Trail to the Core</h1>
+      <p class="legend-lede">A geology hike from the top of Mount Everest down to the edge of Earth's inner core. Scroll to walk the trail.</p>
+      <ul class="legend-key">
+        <li><svg viewBox="0 0 48 16" aria-hidden="true"><path d="M4 8 H44" class="k-halo"/><path d="M4 8 H44" class="k-dots"/></svg>Trail</li>
+        <li><svg viewBox="0 0 48 20" aria-hidden="true"><rect x="6" y="2" width="36" height="12" rx="2" fill="#7a3f1d" stroke="#4a2410" stroke-width="2"/><rect x="22" y="14" width="4" height="6" fill="#4a2410"/></svg>Trail sign, giving the real depth</li>
+        <li><svg viewBox="0 0 48 20" aria-hidden="true"><circle cx="24" cy="10" r="7" fill="#d4372c" stroke="#fff" stroke-width="3"/></svg>You are here</li>
+        <li><svg viewBox="0 0 48 20" aria-hidden="true"><rect x="8" y="2" width="32" height="16" rx="2" fill="#fff" stroke="#4a2410" stroke-width="4"/><path d="M14 13 L22 7 L28 11 L34 6" fill="none" stroke="#2f5d50" stroke-width="2.4"/></svg>Hands-on exhibit</li>
+      </ul>
+      <p class="legend-note">Trail not to scale.</p>
+      <nav class="stops-nav" aria-label="Trail stops">
+        <ol>
+          <li><a href="#summit-panel">Summit</a></li>
+          <li><a href="#crust">Crust</a></li>
+          <li><a href="#upper-mantle">Upper mantle</a></li>
+          <li><a href="#lower-mantle">Lower mantle</a></li>
+          <li><a href="#outer-core">Outer core</a></li>
+          <li><a href="#inner-core">Inner core</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <button class="sign" type="button" data-sign="summit" aria-controls="summit-more" aria-expanded="false">
+      <span class="sign-name">Summit</span>
+      <span class="sign-depth">+8,849 m</span>
+    </button>
+
+    <a class="start-cue" href="#summit-panel">
+      <span>Start the hike</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg>
+    </a>
+
+    <article class="panel panel-left" id="summit-panel" aria-labelledby="summit-title">
+      <h2 id="summit-title">The summit of Mount Everest</h2>
+      <p class="meta">+8,849 m · below −30 °C</p>
+      <p class="lead" data-fact="everest-intro">Everest is the highest point on Earth, and its summit rocks are uplifted ocean sediments full of marine fossils.</p>
+      <ul class="facts">
+        <li data-fact="everest-a">Summit elevation is 8,849 m (29,032 ft), on the Nepal–China (Tibet) border.</li>
+      </ul>
+      <div class="more" id="summit-more">
+        <ul class="facts">
+          <li data-fact="everest-b">Winds are over 160 km/h (100 mph), temperatures regularly drop below −30°C (−22°F), and oxygen is about one third of the sea-level amount.</li>
+          <li data-fact="everest-c">Still rising about 2 mm (0.08 in) per year, and fits evidence that the Indian plate is still subducting.</li>
+          <li data-fact="everest-d">Why Everest is the tallest and not a nearby peak is probably “just luck”.</li>
+        </ul>
+      </div>
+      <button class="read" type="button" aria-controls="summit-more" aria-expanded="false" data-more="summit-more"><span>Read the whole sign</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+    </article>
+    <p class="cut-label" aria-hidden="true">Sea level · 0 m</p>
+  </section>
+
+  <!-- ============ 2. CRUST ============ -->
+  <section class="stop stop-crust trail-right" id="crust" data-tag="Crust · 0–100 km · plate base 1,300–1,500 °C" aria-labelledby="crust-title">
+    <div class="scene" aria-hidden="true">
+      <svg class="texture" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#pat-strata)"/></svg>
+    </div>
+    <button class="sign" type="button" data-sign="crust" aria-controls="crust-more" aria-expanded="false">
+      <span class="sign-name">Crust</span>
+      <span class="sign-depth">0–100 km</span>
+    </button>
+    <div class="col">
+      <article class="panel" aria-labelledby="crust-title">
+        <h2 id="crust-title">The crust, where plates collide</h2>
+        <p class="meta">0–100 km deep</p>
+        <p class="lead" data-fact="himalaya-intro">The Himalayan-Tibetan Plateau is currently the world’s largest active continent-continent collision, formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction.</p>
+        <ul class="facts">
+          <li data-fact="layers-intro">Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.</li>
+          <li data-fact="layers-a">Crust: about 0–100 km deep.</li>
+        </ul>
+        <div class="more" id="crust-more">
+          <ul class="facts">
+            <li data-fact="himalaya-a">The Indian plate broke from Pangaea and moved north for about 80 million years before hitting southern Central Asia.</li>
+            <li data-fact="himalaya-b">Collision began 50–60 million years ago.</li>
+            <li data-fact="himalaya-c">Plates converge at 40–50 mm/year, and about half of that is absorbed across the Himalaya.</li>
+            <li data-fact="himalaya-d">Subduction is nonuniform and Indian crust underthrusts southern Tibet.</li>
+          </ul>
+        </div>
+        <button class="read" type="button" aria-controls="crust-more" aria-expanded="false" data-more="crust-more"><span>Read the whole sign</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+      </article>
+
+      <figure class="exhibit" id="plates-exhibit">
+        <h3 class="exhibit-title">Push the plates</h3>
+        <p class="exhibit-how">Drag the Indian plate north, or use the slider.</p>
+        <div class="exhibit-art">
+          <svg id="plates" viewBox="0 0 960 400" role="img" aria-labelledby="plates-desc">
+            <title id="plates-desc">Cross-section of the Indian plate moving north into the Eurasian plate</title>
+            <rect width="960" height="150" fill="#cfe1ee"/>
+            <rect y="150" width="960" height="250" fill="#5e3020"/>
+            <path d="M0 300 H960" stroke="#4f6b2c" stroke-width="100" opacity=".55"/>
+            <g id="ocean"><rect id="ocean-water" y="150" height="26" fill="#3f7fb0"/><text id="ocean-label" class="pl-label pl-label-sm" y="140" text-anchor="middle">Neotethys Ocean</text></g>
+            <path id="slab" fill="#3d4656"/>
+            <path id="india" fill="#d39661" stroke="#2a1a12" stroke-width="3"/>
+            <path id="eurasia" fill="#a8643a" stroke="#2a1a12" stroke-width="3"/>
+            <path id="folds" fill="none" stroke="#5e3020" stroke-width="3" opacity=".7"/>
+            <text id="india-label" class="pl-label" y="210" text-anchor="middle">Indian plate</text>
+            <text class="pl-label" x="830" y="225" text-anchor="middle">Eurasian plate</text>
+            <text id="hima-label" class="pl-label" x="660" y="60" text-anchor="middle" opacity="0">Himalaya</text>
+            <g id="india-arrow" fill="#2a1a12"><path d="M0 0 H54 V-9 L76 6 L54 21 V12 H0Z"/></g>
+            <g class="compass"><text class="pl-label pl-label-sm" x="26" y="390">S</text><text class="pl-label pl-label-sm" x="924" y="390">N</text></g>
+          </svg>
+        </div>
+        <label class="slider">
+          <span>Push the Indian plate north</span>
+          <input type="range" id="plates-range" min="0" max="100" value="0" step="1">
+        </label>
+        <p class="exhibit-status" id="plates-status" aria-live="polite">The Neotethys Ocean floor sinks beneath Eurasia as India moves north.</p>
+        <figcaption>Illustration, not to scale.</figcaption>
+      </figure>
+    </div>
+    <p class="cut-label" aria-hidden="true">Base of the plates · up to 200 km</p>
+  </section>
+
+  <!-- ============ 3. UPPER MANTLE ============ -->
+  <section class="stop stop-upper trail-left" id="upper-mantle" data-tag="Upper mantle · 410 km · about 1,560 °C" aria-labelledby="upper-title">
+    <div class="scene" aria-hidden="true">
+      <svg class="texture" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#pat-grains)"/></svg>
+    </div>
+    <button class="sign" type="button" data-sign="upper" aria-controls="upper-more" aria-expanded="false">
+      <span class="sign-name">Upper mantle</span>
+      <span class="sign-depth">410 km</span>
+    </button>
+    <div class="col">
+      <article class="panel" aria-labelledby="upper-title">
+        <h2 id="upper-title">The upper mantle and the 410 km boundary</h2>
+        <p class="meta">410 km deep · about 1,560 °C</p>
+        <p class="lead" data-fact="layers-b">Mantle: extends to 2,900 km depth from the crust, with a seismic discontinuity at 410 km and the top of the lower mantle at 670 km.</p>
+        <ul class="facts">
+          <li data-fact="temperature-a">Bottom of tectonic plates (up to 200 km deep): 1,300–1,500°C; 410 km discontinuity: about 1,560°C.</li>
+        </ul>
+        <div class="more" id="upper-more">
+          <ul class="facts">
+            <li data-fact="layers-c">Minerals: the 410 km boundary is tied to the olivine-wadsleyite transition; a 420–440 km diamond inclusion holds garnet, 10-Å phase, ilmenite and liebermannite.</li>
+          </ul>
+        </div>
+        <button class="read" type="button" aria-controls="upper-more" aria-expanded="false" data-more="upper-more"><span>Read the whole sign</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+      </article>
+
+      <figure class="exhibit exhibit-diamond" id="diamond-exhibit">
+        <h3 class="exhibit-title">A diamond from 420–440 km</h3>
+        <p class="exhibit-how">Press the button to see the four minerals sealed inside it.</p>
+        <div class="exhibit-art diamond-art">
+          <svg id="diamond" viewBox="-40 0 520 300" role="img" aria-labelledby="diamond-desc">
+            <title id="diamond-desc">A diamond with four mineral inclusions: garnet, 10-Å phase, ilmenite and liebermannite</title>
+            <g class="gem">
+              <path d="M110 70 H290 L350 130 L200 270 L50 130Z" fill="#e8f4f7" stroke="#2a3a40" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M50 130 H350 M110 70 L150 130 L200 70 L250 130 L290 70 M150 130 L200 270 L250 130" fill="none" stroke="#2a3a40" stroke-width="2.4" stroke-linejoin="round" opacity=".7"/>
+              <path d="M120 80 L140 120 L80 125Z" fill="#fff" opacity=".85"/>
+            </g>
+            <g class="inclusions">
+              <g class="inc" style="--i:0"><circle cx="170" cy="160" r="11" fill="#9b2335"/><path d="M170 160 L96 205" class="inc-line"/><text x="90" y="222" class="inc-label" text-anchor="end">Garnet</text></g>
+              <g class="inc" style="--i:1"><rect x="214" y="150" width="18" height="12" rx="2" fill="#6a8a8f"/><path d="M232 156 L300 40 L360 40" class="inc-line"/><text x="364" y="47" class="inc-label">10-Å phase</text></g>
+              <g class="inc" style="--i:2"><path d="M188 196 l12 -8 l10 10 l-12 8z" fill="#2b2b2b"/><path d="M200 206 L130 262" class="inc-line"/><text x="124" y="280" class="inc-label" text-anchor="end">Ilmenite</text></g>
+              <g class="inc" style="--i:3"><circle cx="232" cy="190" r="8" fill="#c08a3e"/><path d="M240 192 L310 230" class="inc-line"/><text x="314" y="240" class="inc-label">Liebermannite</text></g>
+            </g>
+          </svg>
+        </div>
+        <button class="action" type="button" id="diamond-btn" aria-pressed="false">Look inside the diamond</button>
+        <figcaption>Illustration, not to scale; mineral colours are illustrative.</figcaption>
+      </figure>
+    </div>
+    <p class="cut-label" aria-hidden="true">Top of the lower mantle · 670 km</p>
+  </section>
+
+  <!-- ============ 4. LOWER MANTLE ============ -->
+  <section class="stop stop-lower trail-right" id="lower-mantle" data-tag="Lower mantle · 670 km · about 1,700 °C" aria-labelledby="lower-title">
+    <div class="scene" aria-hidden="true">
+      <canvas class="fx" data-fx="convection"></canvas>
+      <p class="fx-caption">Illustrative mantle flow</p>
+    </div>
+    <button class="sign" type="button" data-sign="lower" aria-controls="lower-more" aria-expanded="false">
+      <span class="sign-name">Lower mantle</span>
+      <span class="sign-depth">670 km</span>
+    </button>
+    <div class="col">
+      <article class="panel" aria-labelledby="lower-title">
+        <h2 id="lower-title">The lower mantle, slowly flowing</h2>
+        <p class="meta">670–2,900 km deep · about 1,700 °C at the top</p>
+        <p class="lead" data-fact="convection-intro">Heat from Earth’s interior drives slow flow in the mantle, and that flow moves the plates.</p>
+        <ul class="facts">
+          <li data-fact="temperature-b">Top of the lower mantle (670 km): about 1,700°C.</li>
+        </ul>
+        <div class="more" id="lower-more">
+          <ul class="facts">
+            <li data-fact="convection-b">Cold sheets of downwelling material (“cold curtains”) sink into the deep interior, imitating subducted slabs.</li>
+            <li data-fact="convection-c">Plate motion can change abruptly: in a convection model, a reorganization took about 6–8 million years as heat built up around a mature downwelling until its buoyancy overcame the downward pull and pushed a plate off course.</li>
+          </ul>
+        </div>
+        <button class="read" type="button" aria-controls="lower-more" aria-expanded="false" data-more="lower-more"><span>Read the whole sign</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+      </article>
+    </div>
+    <p class="cut-label" aria-hidden="true">Base of the mantle · 2,900 km</p>
+  </section>
+
+  <!-- ============ 5. OUTER CORE ============ -->
+  <section class="stop stop-outer trail-left" id="outer-core" data-tag="Outer core · 2,900 km · about 3,700 °C" aria-labelledby="outer-title">
+    <div class="scene" aria-hidden="true">
+      <canvas class="fx" data-fx="molten"></canvas>
+      <p class="fx-caption">Illustrative: molten iron-nickel</p>
+    </div>
+    <button class="sign" type="button" data-sign="outer" aria-controls="outer-more" aria-expanded="false">
+      <span class="sign-name">Outer core</span>
+      <span class="sign-depth">2,900 km</span>
+    </button>
+    <div class="col">
+      <article class="panel" aria-labelledby="outer-title">
+        <h2 id="outer-title">The outer core: liquid metal</h2>
+        <p class="meta">From 2,900 km · about 3,700 °C</p>
+        <p class="lead" data-fact="layers-d">Core: the outer core is liquid iron-nickel, and the inner core boundary lies at 5,100 km depth.</p>
+        <ul class="facts">
+          <li data-fact="temperature-c">Base of the mantle (2,900 km): about 2,300°C, then about 3,700°C in the outer core.</li>
+        </ul>
+        <div class="more" id="outer-more">
+          <ul class="facts">
+            <li data-fact="temperature-e">Temperatures at a given depth can vary by several hundred degrees since they are estimated, not measured directly.</li>
+          </ul>
+        </div>
+        <button class="read" type="button" aria-controls="outer-more" aria-expanded="false" data-more="outer-more"><span>Read the whole sign</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+      </article>
+    </div>
+    <p class="cut-label" aria-hidden="true">Inner core boundary · 5,100 km</p>
+  </section>
+
+  <!-- ============ 6. INNER CORE ============ -->
+  <section class="stop stop-inner trail-right" id="inner-core" data-tag="Inner core boundary · 5,100 km · about 6,000 °C" aria-labelledby="inner-title">
+    <div class="scene" aria-hidden="true">
+      <svg class="texture facets" preserveAspectRatio="none"><rect width="100%" height="100%" fill="url(#pat-facets)"/></svg>
+    </div>
+    <button class="sign sign-end" type="button" data-sign="inner" aria-controls="inner-more" aria-expanded="false">
+      <span class="sign-name">Inner core boundary</span>
+      <span class="sign-depth">5,100 km · trail end</span>
+    </button>
+    <div class="col">
+      <article class="panel" aria-labelledby="inner-title">
+        <h2 id="inner-title">The edge of the solid inner core</h2>
+        <p class="meta">5,100 km deep · about 6,000 °C</p>
+        <p class="lead" data-fact="temperature-d">Inner core boundary (5,100 km): about 6,000°C, close to the temperature at the Sun’s surface.</p>
+        <div class="more" id="inner-more">
+          <ul class="facts">
+            <li data-fact="temperature-intro">Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium. The deeper we go, the hotter it gets.</li>
+          </ul>
+        </div>
+        <button class="read" type="button" aria-controls="inner-more" aria-expanded="false" data-more="inner-more"><span>Why is it so hot?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
+      </article>
+
+      <article class="panel panel-close" aria-labelledby="close-title">
+        <h2 id="close-title">Back up to the summit</h2>
+        <p class="lead" data-fact="convection-a">Interior heat sustains plate tectonics, which shape Earth’s surface over billions of years.</p>
+        <p>That heat keeps the mantle flowing, the flow moves the plates, and the Indian plate's push north is what lifted ocean-floor rock to the top of Everest.</p>
+        <a class="action" href="#map">Walk the trail again</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SOURCES ============ -->
+  <section class="sources" id="sources" aria-labelledby="sources-title">
+    <div class="sources-inner">
+      <h2 id="sources-title">Sources</h2>
+      <ol class="works">
+        <li>Guerrero, Joshua M., Chad W. Fairservice, Pejvak Javaheri, Julian P. Lowman, and Paul J. Tackley. 2025. “A Rapid Tectonic Plate Reorganization Event Driven by Changes at Subduction Locations in a Mantle Convection Model.” <i>Scientific Reports</i> 15 (1): 32316.</li>
+        <li>Guo, Xiaoyu, Wenhui Li, Rui Gao, et al. 2017. “Nonuniform Subduction of the Indian Crust beneath the Himalayas.” <i>Scientific Reports</i> 7 (1): 12497.</li>
+        <li>Huang, Shichun. 2025. “How Hot Is the Inside of the Earth?” <i>Nature Reviews Earth &amp; Environment</i> 6 (7): 437.</li>
+        <li>Scharping, Nathaniel. 2025. “How to Build the World’s Highest Mountain.” <i>Eos</i> 106.</li>
+        <li>Turner, Bethan, Jennifer Jenkins, Rebecca Turner, et al. 2013. “Seismicity of the Earth 1900–2010 Himalaya and Vicinity.” Reston, VA: U.S. Geological Survey, Open-File Report 2010-1083-J, version 1.1.</li>
+      </ol>
+      <p class="fine">All depths and temperatures are approximate, taken from the sources above. The trail, illustrations and animations are not to scale.</p>
+    </div>
+  </section>
+</main>
+
+<!-- Shared texture patterns -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="pat-strata" width="240" height="64" patternUnits="userSpaceOnUse">
+      <path d="M0 18 C 40 10 80 26 120 18 S 200 10 240 18" fill="none" stroke="#3b1f12" stroke-width="2.4" opacity=".45"/>
+      <path d="M0 46 C 50 38 90 54 140 46 S 210 40 240 46" fill="none" stroke="#3b1f12" stroke-width="1.6" opacity=".3"/>
+      <circle cx="60" cy="32" r="2.4" fill="#3b1f12" opacity=".35"/><circle cx="178" cy="30" r="1.8" fill="#f1c9a0" opacity=".35"/>
+    </pattern>
+    <pattern id="pat-grains" width="120" height="104" patternUnits="userSpaceOnUse">
+      <path d="M0 20 L30 0 L70 10 L80 44 L46 62 L8 52Z M80 44 L120 30 M46 62 L60 104 M8 52 L0 90 M70 10 L110 0 M80 44 L104 80 L60 104" fill="none" stroke="#25340f" stroke-width="2" opacity=".42"/>
+      <path d="M30 0 L70 10 L80 44 L46 62 L8 52 L0 20Z" fill="#a4bd5b" opacity=".18"/>
+    </pattern>
+    <pattern id="pat-facets" width="180" height="156" patternUnits="userSpaceOnUse">
+      <path d="M0 78 L45 0 L135 0 L180 78 L135 156 L45 156Z M45 0 L90 78 L135 0 M90 78 L45 156 M90 78 L135 156 M0 78 H180" fill="none" stroke="#c99a2e" stroke-width="1.6" opacity=".45"/>
+      <path class="facet-shine" d="M45 0 L90 78 L135 0Z" fill="#fffbe8" opacity=".5"/>
+    </pattern>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>

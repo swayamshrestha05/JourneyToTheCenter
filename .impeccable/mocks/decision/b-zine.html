@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Copy-Shop Zine sketch</title>
+<style>
+  html,body{margin:0;width:1440px;height:900px;overflow:hidden;background:#1a1a1a;font-family:"Courier New",monospace;color:#1a1a1a}
+  .next{position:absolute;left:300px;right:300px;bottom:0;height:22px;background:#f0b400}
+  .prev{position:absolute;left:300px;right:300px;top:0;height:0}
+  .sheet{position:absolute;left:300px;right:300px;top:0;bottom:22px;background:#4a9fd8;overflow:hidden;padding:44px 80px}
+  .big{font-size:250px;font-weight:900;line-height:.82;letter-spacing:-.05em;margin:0 -140px 0 -10px;white-space:nowrap;filter:url(#copy)}
+  .meta{font-size:30px;font-weight:700;margin:24px 0 18px;letter-spacing:.02em}
+  .col{max-width:600px;font-size:17px;line-height:1.7}
+  .col p{margin:0 0 12px}
+  .box{margin-top:22px;font-size:26px;font-weight:700}
+  .stamp{position:absolute;right:70px;top:420px;border:5px solid #c8102e;color:#c8102e;font-size:40px;font-weight:900;padding:8px 20px;transform:rotate(-8deg);opacity:.9}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="copy"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/><feMorphology operator="dilate" radius="1.2"/></filter></svg>
+<div class="sheet">
+  <div class="big">SUMMIT</div>
+  <div class="meta">+8,849 M · SHEET 1 OF 6 · COPY GEN 0</div>
+  <div class="col">
+    <p>Everest's summit rocks were once the bottom of an ocean. They're full of marine fossils, lifted almost nine kilometres into the sky.</p>
+    <p>Up here the wind tops 160 km/h, it drops below −30°C, and you get a third of sea-level oxygen.</p>
+  </div>
+  <div class="box">[ ] Push the plates →</div>
+  <div class="stamp">STILL RISING 2 MM/YR</div>
+</div>
+<div class="next"></div>
+</body></html>

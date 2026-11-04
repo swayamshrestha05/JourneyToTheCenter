@@ -1,0 +1,82 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-04T03:26:53.503Z",
+        "reason": "model: retired decision sketch from a re-rolled hand, not shipped"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-zine.html"
+        ],
+        "createdAt": "2026-11-04T03:26:53.744Z",
+        "reason": "model: decision sketch rendering the zine challenger's own cream-paper grammar; retired, not shipped"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-11-04T03:26:53.969Z",
+        "reason": "model: canon card intentionally depicts the category standard; retired decision sketch, not shipped"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-11-04T03:56:10.322Z",
+        "reason": "Decision sketch depicting the category-standard look on purpose; not shipping UI"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html",
+          ".impeccable/mocks/decision/challenger-feed.html"
+        ],
+        "createdAt": "2026-11-04T03:56:10.535Z",
+        "reason": "Decision skeleton sketches; the page redraws small text as bars; not shipping UI"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/b-riso.html",
+          ".impeccable/mocks/decision/b-zine.html"
+        ],
+        "createdAt": "2026-11-04T03:58:00.063Z",
+        "reason": "Decision skeleton sketches; not shipping UI"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/c-shader.html"
+        ],
+        "createdAt": "2026-11-04T04:04:07.807Z",
+        "reason": "Unchosen decision sketch; not shipping UI"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-04T04:22:34.620Z",
+        "reason": "Exhibit art frames hold full-bleed illustrations by design; the Sources section is padded (false positive)"
+      }
+    ]
+  }
+}

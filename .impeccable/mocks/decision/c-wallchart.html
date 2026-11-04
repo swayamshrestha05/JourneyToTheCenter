@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Wall Chart sketch</title>
+<style>
+  html,body{margin:0;width:1440px;height:900px;overflow:hidden;background:#16325c;font-family:Georgia,serif;color:#f7f7f2}
+  svg{position:absolute;inset:0}
+  .cart{position:absolute;left:70px;top:56px;width:470px;border:3px solid #f2b31c;outline:1px solid #f2b31c;outline-offset:6px;padding:22px 28px;background:#16325c}
+  .cart .k{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:#f2b31c}
+  .cart h1{margin:8px 0 6px;font-size:56px;line-height:.95;font-weight:700}
+  .cart p{margin:0;font-size:17px;line-height:1.45}
+  .tag{position:absolute;left:880px;top:118px;background:#d8392b;color:#f7f7f2;padding:10px 16px;font-size:26px;font-weight:700;border:2px solid #14110f}
+  .fact{position:absolute;left:70px;top:430px;width:360px;font-size:17px;line-height:1.5}
+  .fact b{display:block;font-size:30px;margin-bottom:6px;color:#f2b31c}
+</style></head><body>
+<svg width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <pattern id="hach" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-40)"><rect width="9" height="9" fill="#f7f7f2"/><path d="M0 0V9" stroke="#16325c" stroke-width="2"/></pattern>
+    <pattern id="rock" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="12" height="12" fill="#6b3e26"/><path d="M0 0V12" stroke="#14110f" stroke-width="2.4"/></pattern>
+  </defs>
+  <path d="M380 900 L640 520 L720 560 L860 170 L900 150 L980 300 L1100 380 L1220 330 L1440 520 L1440 900Z" fill="url(#hach)" stroke="#14110f" stroke-width="4"/>
+  <path d="M860 170 L900 150 L940 230 L900 220 L870 260 Z" fill="#f7f7f2" stroke="#14110f" stroke-width="3"/>
+  <rect x="0" y="820" width="1440" height="80" fill="url(#rock)" stroke="#14110f" stroke-width="4"/>
+  <path d="M900 150 C 980 300, 760 420, 860 560 S 1020 760, 900 900" fill="none" stroke="#d8392b" stroke-width="7" stroke-dasharray="2 16" stroke-linecap="round"/>
+  <path d="M900 150 V100 L935 112 L900 124" fill="#d8392b" stroke="#14110f" stroke-width="3"/>
+  <g fill="#f7f7f2" opacity=".9">
+    <circle cx="960" cy="140" r="4"/><circle cx="1010" cy="128" r="3"/><circle cx="1060" cy="150" r="4"/><circle cx="1120" cy="132" r="3"/><circle cx="1180" cy="160" r="4"/><circle cx="1240" cy="140" r="3"/><circle cx="1300" cy="170" r="4"/><circle cx="1000" cy="180" r="3"/><circle cx="1090" cy="196" r="3"/>
+    <path d="M930 150 Q1100 120 1360 160" stroke="#f7f7f2" stroke-width="2" fill="none" opacity=".6"/>
+  </g>
+</svg>
+<div class="cart"><div class="k">Plate I · A section of the Earth</div><h1>Summit to<br>inner core</h1><p>Follow the dotted route down through every layer.</p></div>
+<div class="tag">● 8,849 m · −30 °C</div>
+<div class="fact"><b>Ocean floor in the sky</b>Everest's summit rocks are uplifted ocean sediments, full of marine fossils.</div>
+</body></html>
