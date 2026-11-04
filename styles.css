@@ -266,7 +266,10 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 12, 30, .55) 0%, rgba(10, 12, 30, .3) 40%, rgba(10, 12, 30, 0) 62%); }
 @media (min-width: 1200px) {
   /* desktop: zoom in, centre Everest's summit, crop the foreground so the peak sits under the title */
-  .hero-photo-frame { --w: max(120cqw, 200cqh); left: 0; bottom: calc(var(--w) / -6); transform: translateX(calc(50cqw - var(--w) * .4367)); }
+  /* summit label to the right of the dot, clear of the intro paragraph */
+  .sign-peak .sign-depth { order: 0; }
+  /* shifted up by 8cqh: crops a little more sky so the summit sits higher */
+  .hero-photo-frame { --w: max(120cqw, 200cqh); left: 0; bottom: calc(var(--w) / -6 + 8cqh); transform: translateX(calc(50cqw - var(--w) * .4367)); }
   /* fade the photo's lower slopes into the Summit section's ground (#1e1c24) so there is no hard edge */
   .hero-photo::after {
     background:
