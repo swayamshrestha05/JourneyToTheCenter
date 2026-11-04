@@ -119,13 +119,12 @@
   <!-- ============ 1. SUMMIT ============ -->
   <section class="layer summit" id="summit" data-stop data-name="Summit of Mount Everest" data-mode="Altitude" data-depth="8,849 m" data-temp="below −30 °C" data-at="at the summit" data-from="-8.849" data-to="0" aria-labelledby="summit-title">
     <div class="wrap">
-      <div class="layer-head">
-        <h2 id="summit-title">The Summit</h2>
-        <p class="range-tag">+8,849 m · below −30 °C</p>
-        <p class="lede" data-fact="everest-intro">Everest is the highest point on Earth, and its summit rocks are uplifted ocean sediments full of marine fossils.</p>
-      </div>
-      <div class="grid">
-        <div class="stat"><b>8,849 m</b><span>above sea level, on the border of Nepal and China (Tibet)</span></div>
+      <div class="summit-row">
+        <div class="layer-head">
+          <h2 id="summit-title">The Summit</h2>
+          <p class="range-tag">+8,849 m · below −30 °C</p>
+          <p class="lede" data-fact="everest-intro">Everest is the highest point on Earth, and its summit rocks are uplifted ocean sediments full of marine fossils.</p>
+        </div>
         <div class="facts-col">
           <ul class="facts">
             <li data-fact="everest-a">Summit elevation is 8,849 m (29,032 ft), on the Nepal–China (Tibet) border.</li>
@@ -140,6 +139,7 @@
           <button class="read" type="button" aria-controls="summit-more" aria-expanded="false"><span>Read more about the summit</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
         </div>
       </div>
+      <div class="stat stat-marker"><b>8,849 m</b><span>above sea level, on the border of Nepal and China (Tibet)</span></div>
     </div>
   </section>
 
@@ -157,8 +157,7 @@
         <p class="range-tag">0–100 km deep</p>
         <p class="lede" data-fact="himalaya-intro">The Himalayan-Tibetan Plateau is currently the world’s largest active continent-continent collision, formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction.</p>
       </div>
-      <div class="grid">
-        <figure class="viz exhibit" id="plates-exhibit">
+      <figure class="viz exhibit exhibit-wide" id="plates-exhibit">
           <div class="viz-head">
             <h3>Push the plates</h3>
             <p class="viz-how">Drag the Indian plate north, or use the slider.</p>
@@ -188,8 +187,9 @@
           <p class="viz-status" id="plates-status" aria-live="polite">The Neotethys Ocean floor sinks beneath Eurasia as India moves north.</p>
           <figcaption>Illustration, not to scale.</figcaption>
         </figure>
+      <div class="crust-foot">
+        <div class="stat"><b>40–50 mm</b><span>a year: how fast the two plates still converge</span></div>
         <div class="facts-col">
-          <div class="stat"><b>40–50 mm</b><span>a year: how fast the two plates still converge</span></div>
           <ul class="facts">
             <li data-fact="layers-intro">Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.</li>
             <li data-fact="layers-a">Crust: about 0–100 km deep.</li>
@@ -222,7 +222,13 @@
         <p class="range-tag">410 km deep · about 1,560 °C</p>
         <p class="lede" data-fact="layers-b">Mantle: extends to 2,900 km depth from the crust, with a seismic discontinuity at 410 km and the top of the lower mantle at 670 km.</p>
       </div>
-      <div class="grid">
+      <ol class="ladder" aria-label="Down through the upper mantle">
+        <li><span class="d">up to 200 km</span><span class="s"><b>Base of the plates</b><span>1,300–1,500 °C</span></span></li>
+        <li><span class="d">410 km</span><span class="s"><b>Olivine → wadsleyite</b><span>A seismic discontinuity, about 1,560 °C</span></span></li>
+        <li><span class="d">420–440 km</span><span class="s"><b>A diamond’s inclusions</b><span>Garnet, 10-Å phase, ilmenite, liebermannite</span></span></li>
+        <li><span class="d">670 km</span><span class="s"><b>Top of the lower mantle</b><span>About 1,700 °C</span></span></li>
+      </ol>
+      <div class="grid grid-flip">
         <figure class="viz exhibit exhibit-diamond" id="diamond-exhibit">
           <div class="viz-head">
             <h3>A diamond from 420–440 km</h3>
@@ -251,12 +257,6 @@
           <ul class="facts">
             <li data-fact="temperature-a">Bottom of tectonic plates (up to 200 km deep): 1,300–1,500°C; 410 km discontinuity: about 1,560°C.</li>
           </ul>
-          <ol class="ladder" aria-label="Down through the upper mantle">
-            <li><span class="d">up to 200 km</span><span class="s"><b>Base of the plates</b><span>1,300–1,500 °C</span></span></li>
-            <li><span class="d">410 km</span><span class="s"><b>Olivine → wadsleyite</b><span>A seismic discontinuity, about 1,560 °C</span></span></li>
-            <li><span class="d">420–440 km</span><span class="s"><b>A diamond’s inclusions</b><span>Garnet, 10-Å phase, ilmenite, liebermannite</span></span></li>
-            <li><span class="d">670 km</span><span class="s"><b>Top of the lower mantle</b><span>About 1,700 °C</span></span></li>
-          </ol>
           <div class="more" id="upper-more">
             <ul class="facts">
               <li data-fact="layers-c">Minerals: the 410 km boundary is tied to the olivine-wadsleyite transition; a 420–440 km diamond inclusion holds garnet, 10-Å phase, ilmenite and liebermannite.</li>
@@ -277,16 +277,13 @@
         <span class="sign-dot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8 H12 M8 4 V12"/></svg></span>
         <span class="sign-depth">670 km</span>
       </button>
-      <div class="layer-head">
-        <h2 id="lower-title">Lower Mantle</h2>
-        <p class="range-tag">670–2,900 km deep · about 1,700 °C at the top</p>
-        <p class="lede" data-fact="convection-intro">Heat from Earth’s interior drives slow flow in the mantle, and that flow moves the plates.</p>
-      </div>
-      <div class="grid">
-        <figure class="viz viz-canvas">
-          <canvas class="fx" data-fx="convection" aria-hidden="true"></canvas>
-          <figcaption>Illustrative mantle flow, not to scale</figcaption>
-        </figure>
+      <div class="lower-split">
+        <div class="lower-text">
+          <div class="layer-head">
+            <h2 id="lower-title">Lower Mantle</h2>
+            <p class="range-tag">670–2,900 km deep · about 1,700 °C at the top</p>
+            <p class="lede" data-fact="convection-intro">Heat from Earth’s interior drives slow flow in the mantle, and that flow moves the plates.</p>
+          </div>
         <div class="facts-col">
           <ul class="facts">
             <li data-fact="temperature-b">Top of the lower mantle (670 km): about 1,700°C.</li>
@@ -299,6 +296,11 @@
           </div>
           <button class="read" type="button" aria-controls="lower-more" aria-expanded="false"><span>When plates change course</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
         </div>
+        </div>
+        <figure class="viz viz-canvas">
+          <canvas class="fx" data-fx="convection" aria-hidden="true"></canvas>
+          <figcaption>Illustrative mantle flow, not to scale</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -320,9 +322,8 @@
         <p class="range-tag">2,900–5,100 km deep · about 3,700 °C</p>
         <p class="lede" data-fact="layers-d">Core: the outer core is liquid iron-nickel, and the inner core boundary lies at 5,100 km depth.</p>
       </div>
-      <div class="grid">
+      <div class="grid outer-grid">
         <div class="facts-col">
-          <div class="stat"><b>~3,700 °C</b><span>in the outer core, up from about 2,300 °C at the base of the mantle</span></div>
           <ul class="facts">
             <li data-fact="temperature-c">Base of the mantle (2,900 km): about 2,300°C, then about 3,700°C in the outer core.</li>
           </ul>
@@ -333,7 +334,10 @@
           </div>
           <button class="read" type="button" aria-controls="outer-more" aria-expanded="false"><span>How sure are these numbers?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>
         </div>
-        <p class="window-cap">Illustrative: molten iron-nickel in motion</p>
+        <div class="outer-window">
+          <div class="stat stat-big"><b>~3,700 °C</b><span>in the outer core, up from about 2,300 °C at the base of the mantle</span></div>
+          <p class="window-cap">Illustrative: molten iron-nickel in motion</p>
+        </div>
       </div>
     </div>
   </section>
@@ -352,7 +356,7 @@
         <p class="range-tag">5,100 km deep · about 6,000 °C · end of the trail</p>
         <p class="lede" data-fact="temperature-d">Inner core boundary (5,100 km): about 6,000°C, close to the temperature at the Sun’s surface.</p>
       </div>
-      <div class="grid">
+      <div class="inner-stage">
         <div class="orb-wrap"><div class="orb" role="img" aria-label="Illustration of the glowing solid inner core"></div></div>
         <div class="facts-col">
           <div class="stat"><b>~6,000 °C</b><span>close to the temperature at the Sun’s surface</span></div>

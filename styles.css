@@ -283,7 +283,74 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .layer .lede { font-size: clamp(19px, 1.7vw, 22px); line-height: 1.5; color: var(--ink); max-width: 56ch; margin-top: 6px; }
 
 .grid { display: grid; gap: 44px; margin-top: 52px; align-items: start; }
-@media (min-width: 1240px) { .grid { grid-template-columns: 1.15fr 1fr; } }
+@media (min-width: 1200px) { .grid { grid-template-columns: 1.15fr 1fr; } }
+
+/* Each layer gets its own composition so the descent changes shape as it goes down. */
+
+/* Summit: heading and facts side by side, then the elevation set as a full-width marker */
+.summit-row { display: grid; gap: 40px; align-items: end; }
+.stat.stat-marker { margin-top: 64px; display: grid; gap: 10px; }
+.stat.stat-marker b { font-size: clamp(72px, 13vw, 184px); letter-spacing: -.04em; line-height: .9; }
+.stat.stat-marker span { max-width: 40ch; font-size: 18px; }
+@media (min-width: 1200px) {
+  .summit-row { grid-template-columns: 1.1fr 1fr; gap: 56px; }
+  .summit-row .layer-head { max-width: none; }
+  .stat.stat-marker { grid-template-columns: auto 1fr; align-items: end; gap: 28px; }
+  .stat.stat-marker span { padding-bottom: 14px; }
+}
+
+/* Crust: the plate exhibit runs the full width; rate and facts sit in a row under it */
+.exhibit.exhibit-wide { margin-top: 52px; }
+.crust-foot { display: grid; gap: 32px; margin-top: 48px; align-items: start; }
+@media (min-width: 1200px) {
+  .exhibit.exhibit-wide {
+    grid-template-columns: minmax(240px, 1fr) 2.3fr;
+    grid-template-areas: "head art" "slider art" "status art" "cap art";
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 28px;
+    padding: 24px;
+  }
+  .exhibit-wide .viz-head { grid-area: head; }
+  .exhibit-wide .viz-art { grid-area: art; align-self: center; }
+  .exhibit-wide .slider { grid-area: slider; }
+  .exhibit-wide .viz-status { grid-area: status; }
+  .exhibit-wide figcaption { grid-area: cap; }
+  .crust-foot { grid-template-columns: 1fr 1.25fr; gap: 56px; }
+}
+
+/* Upper mantle: the ladder becomes a depth ruler across the width (see mineral ladder); diamond moves right */
+@media (min-width: 1200px) {
+  .grid-flip { grid-template-columns: 1fr 1.15fr; }
+  .grid-flip > .exhibit { order: 2; }
+}
+
+/* Lower mantle: text on the left, the flow as a tall panel on the right */
+.lower-split { display: grid; gap: 44px; }
+.lower-text { display: grid; gap: 44px; align-content: start; }
+@media (min-width: 1200px) {
+  .lower-split { grid-template-columns: minmax(540px, 1.3fr) 1fr; gap: 48px; align-items: stretch; }
+  .lower-split .viz-canvas { aspect-ratio: auto; min-height: 560px; }
+}
+
+/* Outer core: facts left, the temperature set large over the molten flow on the right */
+.outer-window { display: grid; gap: 18px; align-content: end; justify-items: start; }
+.stat.stat-big { display: grid; gap: 8px; }
+.stat.stat-big b { font-size: clamp(64px, 8.5vw, 128px); letter-spacing: -.035em; line-height: .92; }
+@media (min-width: 1200px) {
+  .outer-grid { grid-template-columns: 1fr 1fr; align-items: end; min-height: 300px; }
+  .outer-window { justify-items: end; text-align: right; }
+  .outer-window .stat-big span { justify-self: end; }
+}
+
+/* Inner core boundary: the one centred moment at the end of the trail */
+.inner .layer-head { margin-inline: auto; justify-items: center; text-align: center; }
+.inner .lede { margin-inline: auto; }
+.inner-stage { display: grid; justify-items: center; margin-top: 24px; }
+.inner-stage .orb-wrap { max-width: 620px; }
+.inner-stage .facts-col { justify-items: center; text-align: center; margin-top: -8px; }
+.inner-stage .stat { justify-content: center; }
+.inner-stage .read { justify-self: center; }
+.inner-stage .facts li { text-align: left; }
 
 .facts-col { display: grid; gap: 22px; align-content: start; max-width: 62ch; }
 .facts { list-style: none; margin: 0; padding: 0; display: grid; }
@@ -385,14 +452,23 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .exhibit-diamond.open .inc { opacity: 1; transform: none; }
 .exhibit-diamond.open .gem { transform: scale(1.06); }
 
-/* mineral ladder */
-.ladder { list-style: none; margin: 0; padding: 0; display: grid; }
+/* mineral ladder: vertical on small screens, a horizontal depth ruler on wide ones */
+.ladder { list-style: none; margin: 44px 0 0; padding: 0; display: grid; }
 .ladder li { display: grid; grid-template-columns: 96px 1fr; gap: 0 16px; }
 .ladder .d { font: 500 12px var(--mono); color: var(--ink-dim); padding-top: 13px; text-align: right; font-variant-numeric: tabular-nums; }
 .ladder .s { position: relative; display: grid; border-left: 1px solid rgba(255, 138, 61, .7); padding: 10px 0 14px 18px; }
 .ladder .s::before { content: ""; position: absolute; left: -5.5px; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--magma); }
 .ladder b { font: 600 18px var(--display); }
 .ladder .s span { font-size: 15px; color: var(--ink-soft); }
+@media (min-width: 1200px) {
+  .ladder { margin-top: 56px; grid-template-columns: repeat(4, 1fr); gap: 0 20px; }
+  .ladder li { grid-template-columns: 1fr; gap: 0; }
+  .ladder .d { text-align: left; padding: 0 0 12px; font-size: 13px; }
+  .ladder .s { border-left: 0; border-top: 3px solid rgba(255, 138, 61, .7); padding: 18px 0 0; }
+  .ladder .s::before { left: 0; top: -6.5px; }
+  .ladder b { font-size: 21px; }
+  .ladder .s span { font-size: 16px; margin-top: 4px; }
+}
 
 /* ---------- boundaries ---------- */
 
