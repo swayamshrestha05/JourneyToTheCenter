@@ -267,6 +267,13 @@ a { color: var(--magma); text-underline-offset: .2em; }
 @media (min-width: 1200px) {
   /* desktop: zoom in, centre Everest's summit, crop the foreground so the peak sits under the title */
   .hero-photo-frame { --w: max(120cqw, 200cqh); left: 0; bottom: calc(var(--w) / -6); transform: translateX(calc(50cqw - var(--w) * .4367)); }
+  /* fade the photo's lower slopes into the Summit section's ground (#1e1c24) so there is no hard edge */
+  .hero-photo::after {
+    background:
+      linear-gradient(180deg, rgba(30, 28, 36, 0) 62%, rgba(30, 28, 36, .35) 74%, rgba(30, 28, 36, .8) 88%, #1e1c24 100%),
+      linear-gradient(90deg, rgba(10, 12, 30, .55) 0%, rgba(10, 12, 30, .3) 40%, rgba(10, 12, 30, 0) 62%);
+  }
+  .hero .fx { -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, #000 80%, transparent 100%); }
 }
 .hero-copy { z-index: 2; padding-top: clamp(80px, 14vh, 140px); padding-bottom: 320px; }
 .hero h1 { font-size: var(--t-display); font-weight: 800; letter-spacing: -.025em; max-width: 14ch; }
