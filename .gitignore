@@ -11,3 +11,6 @@
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# Taste skill working files (inspector screenshots, direction sheets)
+.taste-skill/
