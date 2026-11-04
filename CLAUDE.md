@@ -25,6 +25,12 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 - After committing, report the commit hash and a short summary of what it contains.
 - `.gitignore` excludes `.claude/`, `.cursor/` (locally installed Impeccable tooling and settings) and Impeccable's local runtime state; keep them out of commits.
 
+## Layout scope: desktop only
+
+- From 2026-11-04 the user wants **only the desktop layout checked and tuned** (the wide-screen styles, `@media (min-width: 1200px)` and the base rules as they render at 1440px).
+- **Leave phones and tablets as they are.** Don't edit the `max-width: 999px` / `max-width: 560px` media blocks, don't tune mobile spacing or type, and don't review phone or tablet screenshots, unless the user asks.
+- When a desktop change has to touch shared base rules, keep it from visibly changing the phone layout where practical (scope new rules inside `min-width` queries).
+
 ## Content rules (the core constraint)
 
 - `content/facts.json` (25 claims) + `content/sources.json` (5 Chicago-style sources) are the **only** source of scientific statements. Never write geology facts, numbers, images or quotes from memory; a gap stays a visible gap.
@@ -49,3 +55,4 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 
 - `.claude/` and `.cursor/` contain the **impeccable** design skill and its agents (asset producer, documenter, finish reviewer, manual-edit applier); `.impeccable/` holds its config, decision mocks and review state. Mocks under `.impeccable/mocks/` and `.impeccable/backup-trail-map/` (the superseded park-trail-map design) are not shipping UI — don't edit them as part of the site.
 - Outstanding per the direction contract: a finish review and a `DESIGN.md` for the current world.
+- The **taste skill** (`design-taste-frontend`, installed user-level in `~/.claude/skills/`) has a browser inspector that needs Node 22+. The default Node here is 20, so run it with nvm's Node 26 directly: `"$LOCALAPPDATA/nvm/v26.13.0/node.exe" ~/.claude/skills/design-taste-frontend/scripts/inspect.mjs index.html --out .taste-skill/after`. Its output goes to `.taste-skill/` (gitignored). Many of its FAILs (gradients, glass gauge, monospace data, dashed boundaries) are the skill's house style clashing with the agreed direction contract; the contract wins.
