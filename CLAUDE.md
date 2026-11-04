@@ -39,6 +39,7 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 - Sources appear only as a Chicago list at the end of the page.
 - No centre-of-Earth depth or temperature (unsourced): the journey ends at the inner-core boundary (5,100 km). The outer core is molten iron-nickel, never "lava".
 - Illustrative visuals must never read as measured data.
+- **Photographs** (`assets/`) are real, openly licensed pictures from Wikimedia Commons, found and downloaded with the taste skill's `assets.mjs`; `assets/credits.json` records each one's source and licence, and every photo is credited in the `.credits` line under Sources. Captions say only what the picture shows (taken from its Commons description), never a geology claim that isn't in `facts.json`, and a photo must not pass for something it isn't (e.g. the kimberlite diamond is captioned as not being the exhibit's 420–440 km diamond). No honest photos exist of the lower mantle or core; those layers stay illustrated.
 
 ## Architecture
 

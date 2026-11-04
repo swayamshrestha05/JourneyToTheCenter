@@ -324,6 +324,21 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .crust-foot { grid-template-columns: 1fr 1.25fr; gap: 56px; }
 }
 
+/* Real photographs (open-licence, credited under Sources). Captions say only what the picture shows. */
+.photo { margin: 0; }
+.photo img { display: block; width: 100%; height: auto; object-fit: cover; }
+.photo figcaption { margin-top: 10px; font: italic 400 var(--t-small)/1.4 var(--body); color: var(--ink-soft); max-width: 60ch; }
+.photo-band { margin-top: 64px; }
+.photo-band img { aspect-ratio: 21 / 9; object-position: 50% 30%; }
+.photo-side img { aspect-ratio: 4 / 3; }
+.specimens { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+.photo-specimen img { aspect-ratio: 1 / 1; }
+.crust-top { display: grid; gap: 40px; }
+@media (min-width: 1200px) {
+  .crust-top { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; }
+  .crust-top .layer-head { max-width: none; }
+}
+
 /* Upper mantle: the ladder becomes a depth ruler across the width (see mineral ladder); diamond moves right */
 @media (min-width: 1200px) {
   .grid-flip { grid-template-columns: 1fr 1.15fr; }
@@ -344,7 +359,7 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .stat.stat-big b { font-size: var(--t-giant); letter-spacing: -.035em; line-height: .92; }
 @media (min-width: 1200px) {
   .outer-grid { grid-template-columns: 1fr 1fr; align-items: end; min-height: 300px; }
-  .outer-window { justify-items: end; text-align: right; }
+  .outer-window { grid-column: 1 / -1; justify-items: end; text-align: right; }
   .outer-window .stat-big span { justify-self: end; }
 }
 
@@ -610,6 +625,7 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .works { margin: 24px 0 0; padding-left: 1.6em; display: grid; gap: 14px; color: var(--ink-soft); }
 .works li { max-width: 74ch; padding-left: 6px; }
 .works li::marker { font: 600 var(--t-body) var(--display); color: var(--magma); }
+.credits { margin-top: 28px; font-size: var(--t-small); line-height: 1.6; color: var(--ink-soft); max-width: 80ch; }
 .fine { margin-top: 28px; font: italic 400 var(--t-small)/1.6 var(--body); color: var(--ink-dim); max-width: 80ch; }
 
 /* ---------- smaller screens ---------- */
