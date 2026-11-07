@@ -182,7 +182,8 @@
   var gMark = document.getElementById("g-mark");
   var gCol = document.getElementById("g-col");
   var COL_KM = 5100; // the trail ends at the inner core boundary
-  var lastStop = null;
+  var lastStop = null, lastReading = "";
+  var fmt = new Intl.NumberFormat("en-US");
 
   function updateGauge() {
     var probe = window.innerHeight * 0.5;
@@ -193,12 +194,15 @@
     }
     var from = +cur.dataset.from, to = +cur.dataset.to;
     var km = from + (to - from) * p;
-    // visual position only: the readout shows the stop's sourced values, never an interpolated number
     gMark.style.top = (Math.max(0, Math.min(COL_KM, km)) / COL_KM * gCol.clientHeight - 1).toFixed(1) + "px";
+    // the depth readout counts with the scroll between each stop's sourced boundaries
+    // (metres of altitude above sea level, km of depth below it); temperature stays sourced per stop
+    var reading = km < 0 ? fmt.format(Math.round(-km * 1000)) + " m" : fmt.format(Math.round(km)) + " km";
+    if (cur.dataset.mode === "Altitude" && km >= 0) reading = "0 m";
+    if (reading !== lastReading) { lastReading = reading; gDepth.textContent = reading; }
     if (cur !== lastStop) {
       lastStop = cur;
       gMode.textContent = cur.dataset.mode;
-      gDepth.textContent = cur.dataset.depth;
       gTemp.textContent = cur.dataset.temp;
       gAt.textContent = cur.dataset.at;
       gLayer.textContent = cur.dataset.name;
