@@ -193,9 +193,15 @@
     var y0 = window.scrollY, keys = [];
     gaugeSigns.forEach(function (s) {
       var r = s.querySelector(".sign-dot").getBoundingClientRect();
-      keys.push([r.top + r.height / 2 + y0, +s.dataset.km]);
+      var y = r.top + r.height / 2 + y0;
+      // the summit sign sits above the reading line at scroll 0: pin it there so the count starts falling on the first scroll
+      if (s.classList.contains("sign-peak")) y = Math.max(y, window.innerHeight * 0.55);
+      keys.push([y, +s.dataset.km]);
     });
-    stops.forEach(function (st) { keys.push([st.getBoundingClientRect().bottom + y0, +st.dataset.to]); });
+    // lower edges of stops that span a range (the hero, inner core and sources hold one depth and add no key)
+    stops.forEach(function (st) {
+      if (+st.dataset.from !== +st.dataset.to) keys.push([st.getBoundingClientRect().bottom + y0, +st.dataset.to]);
+    });
     keys.sort(function (a, b) { return a[0] - b[0] || a[1] - b[1]; });
     return keys;
   }
