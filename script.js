@@ -185,18 +185,42 @@
   var lastStop = null, lastReading = "";
   var fmt = new Intl.NumberFormat("en-US");
 
-  function updateGauge() {
-    var probe = window.innerHeight * 0.5;
-    var cur = stops[0], p = 0;
-    for (var i = 0; i < stops.length; i++) {
-      var r = stops[i].getBoundingClientRect();
-      if (r.top <= probe) { cur = stops[i]; p = Math.min(1, Math.max(0, (probe - r.top) / r.height)); }
+  var gaugeSigns = Array.prototype.slice.call(document.querySelectorAll(".sign[data-km]"));
+
+  // Depth keyframes in page coordinates: every trail sign (its dot reads exactly its own label)
+  // and every stop's lower edge (its data-to boundary). Between keyframes the depth is interpolated.
+  function depthKeys() {
+    var y0 = window.scrollY, keys = [];
+    gaugeSigns.forEach(function (s) {
+      var r = s.querySelector(".sign-dot").getBoundingClientRect();
+      keys.push([r.top + r.height / 2 + y0, +s.dataset.km]);
+    });
+    stops.forEach(function (st) { keys.push([st.getBoundingClientRect().bottom + y0, +st.dataset.to]); });
+    keys.sort(function (a, b) { return a[0] - b[0] || a[1] - b[1]; });
+    return keys;
+  }
+
+  function depthAt(y, keys) {
+    if (y <= keys[0][0]) return keys[0][1];
+    for (var i = 1; i < keys.length; i++) {
+      if (y <= keys[i][0]) {
+        var a = keys[i - 1], b = keys[i], span = b[0] - a[0];
+        return span > 0 ? a[1] + (b[1] - a[1]) * (y - a[0]) / span : b[1];
+      }
     }
-    var from = +cur.dataset.from, to = +cur.dataset.to;
-    var km = from + (to - from) * p;
+    return keys[keys.length - 1][1];
+  }
+
+  function updateGauge() {
+    // same line the trail's "here" marker rides on, so the gauge reads a sign's depth as the marker passes it
+    var probe = window.innerHeight * 0.55;
+    var cur = stops[0];
+    for (var i = 0; i < stops.length; i++) {
+      if (stops[i].getBoundingClientRect().top <= probe) cur = stops[i];
+    }
+    var km = depthAt(window.scrollY + probe, depthKeys());
     gMark.style.top = (Math.max(0, Math.min(COL_KM, km)) / COL_KM * gCol.clientHeight - 1).toFixed(1) + "px";
-    // the depth readout counts with the scroll between each stop's sourced boundaries
-    // (metres of altitude above sea level, km of depth below it); temperature stays sourced per stop
+    // metres of altitude above sea level, km of depth below it; temperature stays sourced per stop
     var reading = km < 0 ? fmt.format(Math.round(-km * 1000)) + " m" : fmt.format(Math.round(km)) + " km";
     if (cur.dataset.mode === "Altitude" && km >= 0) reading = "0 m";
     if (reading !== lastReading) { lastReading = reading; gDepth.textContent = reading; }
