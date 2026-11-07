@@ -182,7 +182,8 @@
   var gMark = document.getElementById("g-mark");
   var gCol = document.getElementById("g-col");
   var COL_KM = 5100; // the trail ends at the inner core boundary
-  var lastStop = null, lastReading = "";
+  var gBody = document.getElementById("g-body");
+  var lastStop = null, lastReading = "", gaugeKm = 0;
   var fmt = new Intl.NumberFormat("en-US");
 
   var gaugeSigns = Array.prototype.slice.call(document.querySelectorAll(".sign[data-km]"));
@@ -229,7 +230,13 @@
     // metres of altitude above sea level, km of depth below it; temperature stays sourced per stop
     var reading = km < 0 ? fmt.format(Math.round(-km * 1000)) + " m" : fmt.format(Math.round(km)) + " km";
     if (cur.dataset.mode === "Altitude" && km >= 0) reading = "0 m";
-    if (reading !== lastReading) { lastReading = reading; gDepth.textContent = reading; }
+    if (reading !== lastReading) {
+      lastReading = reading;
+      gDepth.textContent = reading;
+      gBody.setAttribute("aria-valuenow", Math.max(0, Math.round(km)));
+      gBody.setAttribute("aria-valuetext", reading + (km < 0 ? " altitude" : " depth"));
+    }
+    gaugeKm = km;
     if (cur !== lastStop) {
       lastStop = cur;
       gMode.textContent = cur.dataset.mode;
@@ -238,6 +245,78 @@
       gLayer.textContent = cur.dataset.name;
     }
   }
+
+  /* the gauge is also a scrubber: drag, click or key along the column to travel to that depth */
+
+  // inverse of depthAt: the scroll position at which the gauge reads `km`
+  // (a flat run, e.g. a layer's lower edge followed by the next sign at the same depth, lands on the sign)
+  function scrollForKm(km) {
+    var keys = depthKeys(), y = keys[0][0];
+    for (var i = keys.length - 1; i >= 0; i--) {
+      if (keys[i][1] <= km) {
+        var a = keys[i], b = keys[i + 1];
+        y = (a[1] === km || !b || b[1] === a[1]) ? a[0] : a[0] + (b[0] - a[0]) * (km - a[1]) / (b[1] - a[1]);
+        break;
+      }
+    }
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    return Math.max(0, Math.min(max, y - window.innerHeight * 0.55));
+  }
+
+  function travelTo(top, smooth) {
+    window.scrollTo({ top: top, behavior: smooth && !reduced ? "smooth" : "instant" });
+  }
+
+  function kmAtPointer(clientY) {
+    var r = gCol.getBoundingClientRect();
+    var f = (clientY - r.top) / r.height;
+    return f < 0 ? null : Math.min(1, f) * COL_KM; // above the column = back to the summit
+  }
+
+  function travelToPointer(clientY, smooth) {
+    var km = kmAtPointer(clientY);
+    travelTo(km === null ? 0 : scrollForKm(km), smooth);
+  }
+
+  var scrubbing = false, scrubMoved = false;
+  gBody.addEventListener("pointerdown", function (e) {
+    if (e.button !== 0) return;
+    scrubbing = true; scrubMoved = false;
+    gBody.setPointerCapture(e.pointerId);
+    gBody.classList.add("scrubbing");
+    e.preventDefault();
+  });
+  gBody.addEventListener("pointermove", function (e) {
+    if (!scrubbing) return;
+    scrubMoved = true;
+    travelToPointer(e.clientY, false);
+  });
+  function endScrub(e) {
+    if (!scrubbing) return;
+    scrubbing = false;
+    gBody.classList.remove("scrubbing");
+    if (!scrubMoved && e.type === "pointerup") travelToPointer(e.clientY, true); // a plain click glides there
+  }
+  gBody.addEventListener("pointerup", endScrub);
+  gBody.addEventListener("pointercancel", endScrub);
+
+  gBody.addEventListener("keydown", function (e) {
+    // targets in km; anything above 0 km (the altitude part of the trip) means "back to the top of the page"
+    var signKms = gaugeSigns.map(function (s) { return +s.dataset.km; });
+    var km = gaugeKm, target, glide = true;
+    switch (e.key) {
+      case "ArrowDown": case "ArrowRight": target = Math.min(COL_KM, Math.max(0, km) + 50); glide = false; break;
+      case "ArrowUp": case "ArrowLeft": target = km > 0 ? Math.max(0, km - 50) : -1; glide = false; break;
+      case "PageDown": target = signKms.filter(function (k) { return k > km + 0.5; })[0]; break;
+      case "PageUp": target = signKms.filter(function (k) { return k < km - 0.5; }).pop(); break;
+      case "Home": target = -1; break;
+      case "End": target = COL_KM; break;
+      default: return;
+    }
+    e.preventDefault();
+    if (target === undefined) target = e.key === "PageUp" ? -1 : COL_KM;
+    travelTo(target < 0 ? 0 : scrollForKm(target), glide);
+  });
 
   var ticking = false;
   function update() {
