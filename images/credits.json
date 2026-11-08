@@ -1,30 +1,25 @@
 [
  {
-  "file": "assets/everest-north-face-toward-base-camp-tibet.jpg",
+  "file": "images/everest-north-face-toward-base-camp-tibet.jpg",
   "media": "image",
-  "ref": "commons:1810976",
-  "title": "Everest North Face toward Base Camp Tibet Luca Galuzzi 2006",
-  "creator": "Luca Galuzzi ( Lucag )",
-  "creatorUrl": null,
-  "date": "2006-08-18",
-  "license": "CC BY-SA 2.5",
-  "licenseCode": "by-sa",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-  "creditRequired": true,
-  "page": "https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
-  "via": "Wikimedia Commons",
-  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/1920px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
-  "width": 1920,
-  "height": 1280,
-  "bytes": 595969,
-  "credit": "\"Everest North Face toward Base Camp Tibet Luca Galuzzi 2006\" by Luca Galuzzi ( Lucag ), CC BY-SA 2.5, via Wikimedia Commons",
-  "notes": [
-   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-  ],
-  "saved": "2026-11-04T16:21:13.697Z"
+  "ref": "unsplash:rq52InIowhs",
+  "title": "Mt Everest before it got covered by clouds. Photo taken from Tibet, the northern side.",
+  "creator": "Alexander Zabrodskiy",
+  "creatorUrl": "https://unsplash.com/@hellkisa",
+  "date": "2024-07-14",
+  "license": "Unsplash License",
+  "licenseCode": "unsplash",
+  "licenseUrl": "https://unsplash.com/license",
+  "creditRequired": false,
+  "page": "https://unsplash.com/photos/rq52InIowhs",
+  "via": "Unsplash",
+  "foundAt": "https://www.mountaindelights.com/everest-expedition-from-tibet-side#gallery-1",
+  "width": 1500,
+  "height": 844,
+  "credit": "\"Mt Everest from Tibet\" by Alexander Zabrodskiy, Unsplash License, via Unsplash"
  },
  {
-  "file": "assets/himalayas.jpg",
+  "file": "images/himalayas.jpg",
   "media": "image",
   "ref": "commons:63432",
   "title": "Himalayas",
@@ -46,7 +41,7 @@
   "saved": "2026-11-04T16:21:13.951Z"
  },
  {
-  "file": "assets/olivine-crystals-from-el-golfo-on-lanzarote.jpg",
+  "file": "images/olivine-crystals-from-el-golfo-on-lanzarote.jpg",
   "media": "image",
   "ref": "commons:75358112",
   "title": "Olivine Crystals from El Golfo on Lanzarote",
@@ -70,7 +65,7 @@
   "saved": "2026-11-04T16:21:14.173Z"
  },
  {
-  "file": "assets/diamond-in-kimberlite-mir-kimberlite-pipe-malo.jpg",
+  "file": "images/diamond-in-kimberlite-mir-kimberlite-pipe-malo.jpg",
   "media": "image",
   "ref": "commons:84500321",
   "title": "Diamond in kimberlite (Mir Kimberlite Pipe, Malo-Botuoba Kimberlite Field, ~354-360 Ma; Mir Diamond Mine, Siberia, Russia) (17440851983)",
@@ -90,5 +85,29 @@
   "credit": "\"Diamond in kimberlite (Mir Kimberlite Pipe, Malo-Botuoba Kimberlite Field, ~354-360 Ma; M…\" by James St. John, CC BY 2.0, via Wikimedia Commons",
   "notes": [],
   "saved": "2026-11-04T16:21:14.664Z"
+ },
+ {
+  "file": "images/everest_hero.jpg",
+  "media": "image",
+  "ref": "commons:134857403",
+  "title": "Sunset view of Everest",
+  "creator": "Nir B. Gurung",
+  "creatorUrl": null,
+  "date": "2022-12-14",
+  "license": "CC BY-SA 4.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/wiki/File:Sunset_view_of_Everest.jpg",
+  "via": "Wikimedia Commons",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Sunset_view_of_Everest.jpg/3840px-Sunset_view_of_Everest.jpg",
+  "width": 3840,
+  "height": 2560,
+  "bytes": 1649283,
+  "credit": "\"Sunset view of Everest\" by Nir B. Gurung, CC BY-SA 4.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-11-04T16:42:29.243Z"
  }
 ]
