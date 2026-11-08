@@ -318,13 +318,21 @@
     travelTo(target < 0 ? 0 : scrollForKm(target), glide);
   });
 
+  var summitSection = document.getElementById("summit");
   var ticking = false;
   function update() {
     ticking = false;
     updateGauge();
     if (!samples.length) return;
     var mapTop = map.getBoundingClientRect().top + window.scrollY;
-    var s = sampleAtY(window.scrollY - mapTop + window.innerHeight * 0.55);
+    var line = window.scrollY - mapTop + window.innerHeight * 0.55;
+    // The reading line starts below the peak (more so in taller windows such as fullscreen), so at the top
+    // of the page the pin would sit down the slope. Through the Summit section, ease the pin from the peak
+    // to the line, the same way the gauge counts 8,849 m down to 0 m, so it starts exactly on the summit.
+    var peakY = samples[0].y, line0 = window.innerHeight * 0.55 - mapTop;
+    var easeEnd = summitSection.getBoundingClientRect().bottom + window.scrollY - mapTop;
+    if (peakY < line0 && line < easeEnd && easeEnd > line0) line = peakY + (line - line0) * (easeEnd - peakY) / (easeEnd - line0);
+    var s = sampleAtY(line);
     pMask.style.strokeDashoffset = (total - (reduced ? total : s.len)).toFixed(1);
     here.style.transform = "translate(" + s.rx.toFixed(1) + "px," + s.ry.toFixed(1) + "px)";
   }
