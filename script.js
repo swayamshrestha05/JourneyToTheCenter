@@ -13,7 +13,7 @@
 
   /* ---------------- collapsible facts ---------------- */
 
-  each(".more", function (m) { m.setAttribute("data-collapsed", ""); });
+  each(".more:not(.formed-body)", function (m) { m.setAttribute("data-collapsed", ""); }); // the Himalaya section starts open
 
   function setOpen(id, open) {
     var region = document.getElementById(id);

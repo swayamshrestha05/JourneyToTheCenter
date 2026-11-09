@@ -122,7 +122,7 @@
   <!-- ============ 2. CRUST ============ -->
   <section class="layer crust" id="crust" data-stop data-name="Crust" data-mode="Depth" data-depth="0–100 km" data-temp="1,300–1,500 °C" data-at="lower down, at the base of the plates (up to 200 km)" data-from="0" data-to="100" aria-labelledby="crust-title">
     <div class="wrap">
-      <button class="sign" type="button" data-sign="crust" data-km="0" aria-controls="crust-more" aria-expanded="false" aria-label="Crust, 0 to 100 km: show more crust facts">
+      <button class="sign" type="button" data-sign="crust" data-km="0" aria-controls="crust-more" aria-expanded="true" aria-label="Crust, 0 to 100 km: show or hide how the Himalaya formed">
         <span class="sign-dot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8 H12 M8 4 V12"/></svg></span>
         <span class="sign-depth">0–100 km</span>
       </button>
@@ -139,25 +139,26 @@
         </div>
       </div>
       <div class="formed">
-        <h3 class="formed-title"><button class="read read-title" type="button" aria-controls="crust-more" aria-expanded="false"><span>How the Himalaya formed</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button></h3>
-        <div class="formed-text">
-          <p class="lede" data-fact="himalaya-intro">The Himalayan-Tibetan Plateau is currently the world’s largest active continent-continent collision, formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction.</p>
-          <div class="stat"><b>40–50 mm</b><span>a year: how fast the two plates still converge</span></div>
-          <div class="more" id="crust-more">
-            <ul class="facts">
+        <h3 class="formed-title"><button class="read read-title" type="button" aria-controls="crust-more" aria-expanded="true"><span>How the Himalaya formed</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button></h3>
+        <div class="more formed-body" id="crust-more">
+          <div class="formed-inner">
+            <div class="formed-grid">
+              <div class="formed-text">
+                <p class="lede" data-fact="himalaya-intro">The Himalayan-Tibetan Plateau is currently the world’s largest active continent-continent collision, formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction.</p>
+                <div class="stat"><b>40–50 mm</b><span>a year: how fast the two plates still converge</span></div>
+              </div>
+              <figure class="photo photo-side">
+          <img src="images/himalayas.jpg" width="1920" height="1265" alt="Rows of snow-covered Himalayan peaks seen from orbit, with brown uplands in the foreground and cloud beyond" loading="lazy" decoding="async">
+          <figcaption>The Himalaya, photographed from the International Space Station.</figcaption>
+        </figure>
+            </div>
+            <ul class="facts formed-facts">
               <li data-fact="himalaya-a">The Indian plate broke from Pangaea and moved north for about 80 million years before hitting southern Central Asia.</li>
               <li data-fact="himalaya-b">Collision began 50–60 million years ago.</li>
               <li data-fact="himalaya-c">Plates converge at 40–50 mm/year, and about half of that is absorbed across the Himalaya.</li>
               <li data-fact="himalaya-d">Subduction is nonuniform and Indian crust underthrusts southern Tibet.</li>
             </ul>
-          </div>
-        </div>
-        <figure class="photo photo-side">
-          <img src="images/himalayas.jpg" width="1920" height="1265" alt="Rows of snow-covered Himalayan peaks seen from orbit, with brown uplands in the foreground and cloud beyond" loading="lazy" decoding="async">
-          <figcaption>The Himalaya, photographed from the International Space Station.</figcaption>
-        </figure>
-      </div>
-      <figure class="viz exhibit exhibit-wide" id="plates-exhibit">
+            <figure class="viz exhibit exhibit-wide" id="plates-exhibit">
           <div class="viz-head">
             <h3>Push the plates</h3>
             <p class="viz-how">Drag the Indian plate north, or use the slider.</p>
@@ -187,6 +188,9 @@
           <p class="viz-status" id="plates-status" aria-live="polite">The Neotethys Ocean floor sinks beneath Eurasia as India moves north.</p>
           <figcaption>Illustration, not to scale.</figcaption>
         </figure>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
