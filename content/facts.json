@@ -257,7 +257,7 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "characteristic",
-      "claim": "Inner core boundary (5,100 km): about 6,000°C, close to the Sun’s surface temperature",
+      "claim": "Inner core boundary (5,100 km)",
       "source": "huang2025",
       "locator": "p. 437"
     }
