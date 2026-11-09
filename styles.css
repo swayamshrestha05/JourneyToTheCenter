@@ -323,7 +323,24 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .layer > .wrap { z-index: 2; }
 .layer-head { display: grid; gap: 14px; max-width: 780px; }
 .layer h2 { font-size: var(--t-display); font-weight: 800; letter-spacing: -.025em; }
-.range-tag { font: 500 var(--t-small) var(--mono); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+/* every layer answers the same three questions */
+.layer-card { display: grid; gap: 8px; margin: 0; max-width: 56ch; }
+.layer-card > div { display: grid; grid-template-columns: 8.5em 1fr; gap: 12px; align-items: baseline; }
+.layer-card dt { font: 600 var(--t-small)/1.4 var(--display); color: var(--ink-dim); }
+.layer-card dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.4; }
+.layer.descent { background: #26222a; padding-block: 72px 96px; }
+.descent-row { display: grid; gap: 40px; align-items: center; }
+.layer-map { margin: 0; }
+.layer-map ol { list-style: none; margin: 0; padding: 0; display: grid; }
+.layer-map li { padding: 16px 20px; font: 700 var(--t-body)/1.3 var(--display); }
+.lm-crust { background: #8a7564; color: #1a0b05; }
+.lm-mantle { background: #7a3320; color: var(--ink); }
+.lm-outer { background: #e07a1f; color: #1a0b05; }
+.lm-inner { background: var(--inner); color: #1a0b05; }
+.layer-map figcaption { margin-top: 10px; font: italic 400 var(--t-small)/1.4 var(--body); color: var(--ink-soft); }
+@media (min-width: 1200px) {
+  .descent-row { grid-template-columns: 1.1fr 1fr; gap: 56px; }
+}
 .layer .lede { font-size: var(--t-lead); line-height: 1.5; color: var(--ink); max-width: 56ch; margin-top: 6px; }
 
 .grid { display: grid; gap: 44px; margin-top: 52px; align-items: start; }
@@ -345,8 +362,6 @@ a { color: var(--magma); text-underline-offset: .2em; }
 
 /* Crust: the layer itself, then a separate chapter on how the Himalaya formed, which leads into the plate exhibit */
 .exhibit.exhibit-wide { margin-top: 52px; }
-.crust-intro { display: grid; gap: 14px; max-width: 62ch; }
-.crust-depth { font-size: var(--t-lead); color: var(--ink-soft); }
 .crust-top .facts.formed-facts { margin-top: 0; }
 .formed { margin-top: 72px; }
 .formed-inner { overflow: hidden; }
@@ -603,7 +618,7 @@ a { color: var(--magma); text-underline-offset: .2em; }
           mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 70%, transparent 100%);
   pointer-events: none;
 }
-.outer .range-tag, .outer .facts li, .outer .stat span { color: #f6e2d0; }
+.outer .layer-card dt, .outer .facts li, .outer .stat span { color: #f6e2d0; }
 .outer .stat b { color: var(--inner); }
 .outer .facts li::before { background: var(--inner); }
 .window-cap { align-self: end; justify-self: end; font: italic 400 var(--t-small)/1.4 var(--body); color: #fff0dc; background: rgba(48, 12, 2, .7); padding: 3px 7px; border-radius: 3px; }
@@ -615,7 +630,9 @@ a { color: var(--magma); text-underline-offset: .2em; }
   background-color: #f2a640;
   color: var(--inner-ink);
 }
-.inner .lede, .inner .range-tag, .inner .facts li, .inner .stat span { color: var(--inner-ink-soft); }
+.inner .lede, .inner .layer-card dt, .inner .facts li, .inner .stat span { color: var(--inner-ink-soft); }
+.inner .layer-card dd { color: var(--inner-ink); }
+.inner .layer-card { justify-self: center; text-align: left; }
 .inner .lede { color: var(--inner-ink); }
 .inner .stat b { color: #6e1f03; }
 .inner .facts li { border-color: rgba(90, 46, 16, .25); }

@@ -185,7 +185,8 @@
   var gBody = document.getElementById("g-body");
   var gBands = gCol.querySelectorAll("i");
   var bandStops = ["crust", "upper-mantle", "lower-mantle", "outer-core"].map(function (id) { return document.getElementById(id); });
-  var lastStop = null, lastReading = "", lastBands = "", gaugeKm = 0;
+  var gaugeBoundaries = Array.prototype.slice.call(document.querySelectorAll(".boundary[data-km]"));
+  var lastStop = null, lastReading = "", lastBands = "", lastTemp = "", gaugeKm = 0;
   var fmt = new Intl.NumberFormat("en-US");
 
   var gaugeSigns = Array.prototype.slice.call(document.querySelectorAll(".sign[data-km]"));
@@ -200,6 +201,11 @@
       // the summit sign sits above the reading line at scroll 0: pin it there so the count starts falling on the first scroll
       if (s.classList.contains("sign-peak")) y = Math.max(y, window.innerHeight * 0.55);
       keys.push([y, +s.dataset.km]);
+    });
+    // a boundary with its own depth (the base of the plates) reads that depth as the marker crosses it
+    gaugeBoundaries.forEach(function (b) {
+      var r = b.getBoundingClientRect();
+      keys.push([r.top + r.height / 2 + y0, +b.dataset.km]);
     });
     // lower edges of stops that span a range (the hero, inner core and sources hold one depth and add no key)
     stops.forEach(function (st) {
@@ -263,9 +269,15 @@
     if (cur !== lastStop) {
       lastStop = cur;
       gMode.textContent = cur.dataset.mode;
-      gTemp.textContent = cur.dataset.temp;
-      gAt.textContent = cur.dataset.at;
       gLayer.textContent = cur.dataset.name;
+    }
+    // temperatures are always sourced strings; a layer with two (top and base) shows whichever is nearer
+    var deep = cur.dataset.deepKm && km >= +cur.dataset.deepKm;
+    var temp = deep ? cur.dataset.deepTemp : cur.dataset.temp, at = deep ? cur.dataset.deepAt : cur.dataset.at;
+    if (temp + at !== lastTemp) {
+      lastTemp = temp + at;
+      gTemp.textContent = temp;
+      gAt.textContent = at;
     }
   }
 

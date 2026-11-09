@@ -92,7 +92,11 @@
       <div class="summit-row">
         <div class="layer-head">
           <h2 id="summit-title">The Summit</h2>
-          <p class="range-tag">+8,849 m · below −30 °C</p>
+          <dl class="layer-card">
+            <div><dt>How high</dt><dd>8,849 m above sea level</dd></div>
+            <div><dt>How hot</dt><dd>Regularly below −30 °C</dd></div>
+            <div><dt>What it’s like</dt><dd>Winds over 160 km/h and about a third of sea-level oxygen</dd></div>
+          </dl>
           <p class="lede" data-fact="everest-intro">Everest is the highest point on Earth, and its summit rocks are uplifted ocean sediments full of marine fossils.</p>
         </div>
         <div class="facts-col">
@@ -119,6 +123,27 @@
 
   <div class="boundary b-sea"><span>Sea level · <em>0 m, where the descent underground begins</em></span></div>
 
+  <section class="layer descent" id="descent" data-stop data-name="Sea level" data-mode="Altitude" data-depth="0 m" data-temp="—" data-at="no sourced temperature for sea level" data-from="0" data-to="0" aria-labelledby="descent-title">
+    <div class="wrap">
+      <div class="descent-row">
+        <div class="layer-head">
+          <h2 id="descent-title">Below Sea Level</h2>
+          <p class="lede" data-fact="layers-intro">Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.</p>
+          <p class="lede" data-fact="temperature-intro">The deeper we go, the hotter it gets.</p>
+        </div>
+        <figure class="layer-map">
+          <ol aria-label="Earth’s layers, from the surface down">
+            <li class="lm-crust" data-fact="layers-a">Crust: about 0–100 km deep.</li>
+            <li class="lm-mantle">Mantle: down to 2,900 km.</li>
+            <li class="lm-outer">Outer core: liquid, down to 5,100 km.</li>
+            <li class="lm-inner">Inner core: solid, from 5,100 km.</li>
+          </ol>
+          <figcaption>Illustration, not to scale.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 2. CRUST ============ -->
   <section class="layer crust" id="crust" data-stop data-name="Crust" data-mode="Depth" data-depth="0–100 km" data-temp="1,300–1,500 °C" data-at="lower down, at the base of the plates (up to 200 km)" data-from="0" data-to="100" aria-labelledby="crust-title">
     <div class="wrap">
@@ -129,12 +154,12 @@
       <div class="crust-top">
         <div class="layer-head">
           <h2 id="crust-title">The Crust</h2>
-          <p class="range-tag">0–100 km deep</p>
         </div>
-        <div class="crust-intro">
-          <p class="lede" data-fact="layers-intro">Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.</p>
-          <p class="crust-depth" data-fact="layers-a">Crust: about 0–100 km deep.</p>
-        </div>
+        <dl class="layer-card">
+          <div><dt>How deep</dt><dd>0–100 km</dd></div>
+          <div><dt>How hot</dt><dd>1,300–1,500 °C at the base of the plates</dd></div>
+          <div><dt>What it’s like</dt><dd>Twice the global average thickness beneath the Tibetan Plateau</dd></div>
+        </dl>
         <ul class="facts formed-facts">
           <li data-fact="crust-a">The crust beneath the Tibetan Plateau is twice as thick as the global average.</li>
           <li data-fact="crust-b">Seismic profiles across the Himalayan collision zone place the base of the crust at about 66–81 km depth.</li>
@@ -198,7 +223,7 @@
     </div>
   </section>
 
-  <div class="boundary b-plates"><span>Base of the plates · <em>up to 200 km, 1,300–1,500 °C</em></span></div>
+  <div class="boundary b-plates" data-km="200"><span>Base of the plates · <em>up to 200 km, 1,300–1,500 °C</em></span></div>
 
   <!-- ============ 3. UPPER MANTLE ============ -->
   <section class="layer upper" id="upper-mantle" data-stop data-name="Upper mantle" data-mode="Depth" data-depth="410 km" data-temp="about 1,560 °C" data-at="at the 410 km discontinuity" data-from="100" data-to="670" aria-labelledby="upper-title">
@@ -209,7 +234,11 @@
       </button>
       <div class="layer-head">
         <h2 id="upper-title">Upper Mantle</h2>
-        <p class="range-tag">410 km deep · about 1,560 °C</p>
+        <dl class="layer-card">
+          <div><dt>How deep</dt><dd>To 670 km</dd></div>
+          <div><dt>How hot</dt><dd>About 1,560 °C at 410 km</dd></div>
+          <div><dt>What it’s like</dt><dd>A seismic discontinuity at 410 km, tied to olivine changing to wadsleyite</dd></div>
+        </dl>
         <p class="lede" data-fact="layers-b">Mantle: extends to 2,900 km depth from the crust, with a seismic discontinuity at 410 km and the top of the lower mantle at 670 km.</p>
       </div>
       <ol class="ladder" aria-label="Down through the upper mantle">
@@ -271,7 +300,7 @@
   <div class="boundary b-lower"><span>Top of the lower mantle · <em>670 km, about 1,700 °C</em></span></div>
 
   <!-- ============ 4. LOWER MANTLE ============ -->
-  <section class="layer lower" id="lower-mantle" data-stop data-name="Lower mantle" data-mode="Depth" data-depth="670 km" data-temp="about 1,700 °C" data-at="at the top of the lower mantle" data-from="670" data-to="2900" aria-labelledby="lower-title">
+  <section class="layer lower" id="lower-mantle" data-stop data-name="Lower mantle" data-mode="Depth" data-depth="670 km" data-temp="about 1,700 °C" data-at="at the top of the lower mantle" data-deep-km="1785" data-deep-temp="about 2,300 °C" data-deep-at="at the base of the mantle" data-from="670" data-to="2900" aria-labelledby="lower-title">
     <div class="wrap">
       <button class="sign" type="button" data-sign="lower" data-km="670" aria-controls="lower-more" aria-expanded="false" aria-label="Lower mantle, 670 km: show more lower mantle facts">
         <span class="sign-dot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8 H12 M8 4 V12"/></svg></span>
@@ -281,7 +310,11 @@
         <div class="lower-text">
           <div class="layer-head">
             <h2 id="lower-title">Lower Mantle</h2>
-            <p class="range-tag">670–2,900 km deep · about 1,700 °C at the top</p>
+            <dl class="layer-card">
+              <div><dt>How deep</dt><dd>670–2,900 km</dd></div>
+              <div><dt>How hot</dt><dd>About 1,700 °C at the top, about 2,300 °C at the base</dd></div>
+              <div><dt>What it’s like</dt><dd>Slow flow driven by heat from Earth’s interior</dd></div>
+            </dl>
             <p class="lede" data-fact="convection-intro">Heat from Earth’s interior drives slow flow in the mantle, and that flow moves the plates.</p>
           </div>
         <div class="facts-col">
@@ -305,7 +338,7 @@
     </div>
   </section>
 
-  <div class="boundary b-cmb"><span>Base of the mantle · <em>2,900 km, about 3,700 °C</em></span></div>
+  <div class="boundary b-cmb"><span>Base of the mantle · <em>2,900 km, about 2,300 °C</em></span></div>
 
   <!-- ============ 5. OUTER CORE ============ -->
   <section class="layer outer" id="outer-core" data-stop data-name="Outer core" data-mode="Depth" data-depth="2,900 km" data-temp="about 3,700 °C" data-at="in the outer core" data-from="2900" data-to="5100" aria-labelledby="outer-title">
@@ -319,7 +352,11 @@
       </span>
       <div class="layer-head">
         <h2 id="outer-title">Outer Core</h2>
-        <p class="range-tag">2,900–5,100 km deep · about 3,700 °C</p>
+        <dl class="layer-card">
+          <div><dt>How deep</dt><dd>2,900–5,100 km</dd></div>
+          <div><dt>How hot</dt><dd>About 3,700 °C</dd></div>
+          <div><dt>What it’s like</dt><dd>Liquid iron-nickel</dd></div>
+        </dl>
         <p class="lede" data-fact="layers-d">Core: the outer core is liquid iron-nickel, and the inner core boundary lies at 5,100 km depth.</p>
       </div>
       <div class="grid outer-grid">
@@ -347,7 +384,11 @@
       </button>
       <div class="layer-head">
         <h2 id="inner-title">Edge of the Inner Core</h2>
-        <p class="range-tag">5,100 km deep · about 6,000 °C · end of the trail</p>
+        <dl class="layer-card">
+          <div><dt>How deep</dt><dd>5,100 km, the end of the trail</dd></div>
+          <div><dt>How hot</dt><dd>About 6,000 °C</dd></div>
+          <div><dt>What it’s like</dt><dd>Where the liquid outer core meets the solid inner core</dd></div>
+        </dl>
         <p class="lede" data-fact="temperature-d">Inner core boundary (5,100 km): about 6,000°C, close to the temperature at the Sun’s surface.</p>
       </div>
       <div class="inner-stage">
@@ -356,7 +397,7 @@
           <div class="stat"><b>~6,000 °C</b><span>close to the temperature at the Sun’s surface</span></div>
           <div class="more" id="inner-more">
             <ul class="facts">
-              <li data-fact="temperature-intro">Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium. The deeper we go, the hotter it gets.</li>
+              <li data-fact="temperature-sources">Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium.</li>
             </ul>
           </div>
           <button class="read" type="button" aria-controls="inner-more" aria-expanded="false"><span>Why is it so hot?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button>

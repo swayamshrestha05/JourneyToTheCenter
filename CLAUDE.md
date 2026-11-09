@@ -33,7 +33,7 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 
 ## Content rules (the core constraint)
 
-- `content/facts.json` (28 claims) + `content/sources.json` (5 Chicago-style sources) are the **only** source of scientific statements. Never write geology facts, numbers, images or quotes from memory; a gap stays a visible gap.
+- `content/facts.json` (29 claims) + `content/sources.json` (5 Chicago-style sources) are the **only** source of scientific statements. Never write geology facts, numbers, images or quotes from memory; a gap stays a visible gap.
 - `content/design.json` is presentation notes only — nothing in it may be shown as a scientific claim.
 - Each fact appears on the page as an element with `data-fact="<id>"` whose text matches the `claim` verbatim (trailing period optional, HTML entities/whitespace normalised). `check_page.py` fails if any claim is reworded or removed, so edit the claim in `facts.json` and the page together.
 - Sources appear only as a Chicago list at the end of the page, inside a dropdown (`details.sources`) that starts closed.
@@ -52,6 +52,8 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
   - The **temperature and its `data-at` note stay the stop's sourced strings, never interpolated** (no sourced in-between temperatures exist); they switch when a new stop crosses the line.
   - The gauge is also a **scrubber** (2026-11-07): `.g-body` is a `role="slider"`. Dragging or clicking the column scrolls the page, and the keys work too: arrows 2% of the rail, PageUp/PageDown between signs, Home/End.
   - The column is a **linear rail along the page, not a depth scale** (user request, 2026-11-08: same slider speed for every layer). Top = page top (8,849 m), bottom = the 5,100 km sign on the reading line (`railEnd()`). `layoutBands()` sizes each band from its layer's length on the page. Never label the column "to scale". `script.js` is one function scope, so give new handlers names that don't clash with the plates exhibit's `dragging`/`endDrag`.
+  - The `.b-plates` boundary is also a depth keyframe (`data-km="200"`). The lower mantle has two sourced temperatures: `data-deep-km` (1,785 km, halfway) switches the readout from the top value to `data-deep-temp`/`data-deep-at`.
+  - `#descent` (sea level) is a stop with no sourced temperature, so the gauge shows "—" rather than an invented value. Each layer opens with a `dl.layer-card` answering how deep, how hot and what it's like, using sourced values only.
   - Adding a stop = add a section with these attributes (and a sign with `data-km`); the gauge picks it up.
 - **Trail**: an SVG (`#trail`) built by `buildTrail()` as a Catmull-Rom curve through the trail signs (`.sign` buttons) and the summit anchor in the hero Everest SVG; revealed on scroll via a stroke-dash mask (`#trail-mask`). The `#here` marker rides it. Rebuilt (debounced) on resize.
 - **Signs / "more" facts**: each `.sign[data-sign]` toggles its stop's `.more` list (`aria-controls`/`aria-expanded`); extra facts live there collapsed. The outer core sign is a plain marker (`.sign-static`) with no list to open; it still sets the trail point and the gauge depth.

@@ -212,7 +212,16 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "intro",
-      "claim": "Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium. The deeper we go, the hotter it gets.",
+      "claim": "The deeper we go, the hotter it gets.",
+      "source": "huang2025",
+      "locator": "p. 437"
+    },
+    {
+      "id": "temperature-sources",
+      "order": 5,
+      "section": "Temperature and heat sources",
+      "kind": "characteristic",
+      "claim": "Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium.",
       "source": "huang2025",
       "locator": "p. 437"
     },
