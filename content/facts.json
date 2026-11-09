@@ -145,6 +145,42 @@
       "locator": "p. 437"
     },
     {
+      "id": "crust-a",
+      "order": 4,
+      "section": "Earth’s layers, structure, composition and minerals",
+      "kind": "characteristic",
+      "claim": "The crust beneath the Tibetan Plateau is twice as thick as the global average",
+      "source": "guo2017",
+      "locator": null
+    },
+    {
+      "id": "crust-b",
+      "order": 4,
+      "section": "Earth’s layers, structure, composition and minerals",
+      "kind": "characteristic",
+      "claim": "Seismic profiles across the Himalayan collision zone place the base of the crust at about 66–81 km depth",
+      "source": "guo2017",
+      "locator": null
+    },
+    {
+      "id": "crust-c",
+      "order": 4,
+      "section": "Earth’s layers, structure, composition and minerals",
+      "kind": "characteristic",
+      "claim": "Inside the Himalaya, faults slice through much of the crust, separating squished, buried rocks scraped off the Indian plate",
+      "source": "scharping2025",
+      "locator": null
+    },
+    {
+      "id": "crust-d",
+      "order": 4,
+      "section": "Earth’s layers, structure, composition and minerals",
+      "kind": "characteristic",
+      "claim": "The crust needed to support Everest’s elevation is probably already somewhat at its maximum thickness; any taller and it may move or change, causing the mountain to sink",
+      "source": "scharping2025",
+      "locator": null
+    },
+    {
       "id": "layers-b",
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",

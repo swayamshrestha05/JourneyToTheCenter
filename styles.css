@@ -343,7 +343,9 @@ a { color: var(--magma); text-underline-offset: .2em; }
 
 /* Crust: the layer itself, then a separate chapter on how the Himalaya formed, which leads into the plate exhibit */
 .exhibit.exhibit-wide { margin-top: 52px; }
-.crust-intro { display: grid; gap: 20px; max-width: 62ch; }
+.crust-intro { display: grid; gap: 14px; max-width: 62ch; }
+.crust-depth { font-size: var(--t-lead); color: var(--ink-soft); }
+.crust-top .facts.formed-facts { margin-top: 0; }
 .formed { margin-top: 72px; }
 .formed-inner { overflow: hidden; }
 .js .more[data-collapsed] > .formed-inner { visibility: hidden; transition: visibility 0s .5s; }
@@ -385,8 +387,9 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .photo-specimen img { aspect-ratio: 1 / 1; }
 .crust-top { display: grid; gap: 40px; }
 @media (min-width: 1200px) {
-  .crust-top { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; }
+  .crust-top { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
   .crust-top .layer-head { max-width: none; }
+  .crust-top .formed-facts { grid-column: 1 / -1; }
 }
 
 /* Upper mantle: the ladder becomes a depth ruler across the width (see mineral ladder); diamond moves right */

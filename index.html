@@ -122,7 +122,7 @@
   <!-- ============ 2. CRUST ============ -->
   <section class="layer crust" id="crust" data-stop data-name="Crust" data-mode="Depth" data-depth="0–100 km" data-temp="1,300–1,500 °C" data-at="lower down, at the base of the plates (up to 200 km)" data-from="0" data-to="100" aria-labelledby="crust-title">
     <div class="wrap">
-      <button class="sign" type="button" data-sign="crust" data-km="0" aria-controls="crust-more" aria-expanded="true" aria-label="Crust, 0 to 100 km: show or hide how the Himalaya formed">
+      <button class="sign" type="button" data-sign="crust" data-km="0" aria-controls="crust-more" aria-expanded="false" aria-label="Crust, 0 to 100 km: show or hide how the Himalaya formed">
         <span class="sign-dot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8 H12 M8 4 V12"/></svg></span>
         <span class="sign-depth">0–100 km</span>
       </button>
@@ -133,13 +133,17 @@
         </div>
         <div class="crust-intro">
           <p class="lede" data-fact="layers-intro">Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.</p>
-          <ul class="facts">
-            <li data-fact="layers-a">Crust: about 0–100 km deep.</li>
-          </ul>
+          <p class="crust-depth" data-fact="layers-a">Crust: about 0–100 km deep.</p>
         </div>
+        <ul class="facts formed-facts">
+          <li data-fact="crust-a">The crust beneath the Tibetan Plateau is twice as thick as the global average.</li>
+          <li data-fact="crust-b">Seismic profiles across the Himalayan collision zone place the base of the crust at about 66–81 km depth.</li>
+          <li data-fact="crust-c">Inside the Himalaya, faults slice through much of the crust, separating squished, buried rocks scraped off the Indian plate.</li>
+          <li data-fact="crust-d">The crust needed to support Everest’s elevation is probably already somewhat at its maximum thickness; any taller and it may move or change, causing the mountain to sink.</li>
+        </ul>
       </div>
       <div class="formed">
-        <h3 class="formed-title"><button class="read read-title" type="button" aria-controls="crust-more" aria-expanded="true"><span>How the Himalaya formed</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button></h3>
+        <h3 class="formed-title"><button class="read read-title" type="button" aria-controls="crust-more" aria-expanded="false"><span>How the Himalaya formed</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9 L12 15 L18 9"/></svg></button></h3>
         <div class="more formed-body" id="crust-more">
           <div class="formed-inner">
             <div class="formed-grid">
