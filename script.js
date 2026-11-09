@@ -39,7 +39,7 @@
     });
   });
 
-  each(".sign", function (sign) {
+  each(".sign[aria-controls]", function (sign) {
     sign.addEventListener("click", function () {
       var id = sign.getAttribute("aria-controls");
       var open = !isOpen(id);

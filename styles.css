@@ -202,6 +202,8 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .sign:focus-visible { outline: none; }
 .sign:focus-visible .sign-dot { outline: 1.5px solid var(--ink); outline-offset: 3px; }
 
+/* a marker only: no extra facts to open */
+.sign-static { cursor: default; pointer-events: none; }
 .sign-peak { left: 0; top: 0; margin: 0; transform: none; z-index: 6; grid-auto-flow: column; align-items: center; gap: 8px; }
 .sign-peak .sign-depth { order: -1; }
 
