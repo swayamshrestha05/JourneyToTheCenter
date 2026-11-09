@@ -377,6 +377,10 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .exhibit-wide .viz-art { grid-area: art; align-self: center; }
   .exhibit-wide .slider { grid-area: slider; }
   .exhibit-wide .viz-status { grid-area: status; }
+  /* all captions share one cell, so the longest sets the height and the exhibit never resizes */
+  .exhibit-wide .viz-status { display: grid; }
+  .exhibit-wide .viz-status > span { grid-area: 1 / 1; }
+  .exhibit-wide .viz-status > span[hidden] { display: block; visibility: hidden; }
   .exhibit-wide figcaption { grid-area: cap; }
   .formed { margin-top: 128px; }
 }
