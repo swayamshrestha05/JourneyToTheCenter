@@ -341,9 +341,15 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .stat.stat-marker span { padding-bottom: 14px; }
 }
 
-/* Crust: the plate exhibit runs the full width; rate and facts sit in a row under it */
+/* Crust: the layer itself, then a separate chapter on how the Himalaya formed, which leads into the plate exhibit */
 .exhibit.exhibit-wide { margin-top: 52px; }
-.crust-foot { display: grid; gap: 32px; margin-top: 48px; align-items: start; }
+.crust-intro { display: grid; gap: 20px; max-width: 62ch; }
+.formed { display: grid; gap: 40px; margin-top: 72px; }
+.formed-text { display: grid; gap: 24px; align-content: start; }
+.formed-text .lede { max-width: 56ch; }
+.formed-title { font: 800 var(--t-figure)/1.05 var(--display); letter-spacing: -.02em; }
+.read.read-title { display: inline-flex; align-items: center; gap: 14px; min-height: 0; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--ink); font: inherit; letter-spacing: inherit; text-align: left; }
+.read.read-title svg { flex: none; width: 32px; height: 32px; color: var(--magma); }
 @media (min-width: 1200px) {
   .exhibit.exhibit-wide {
     grid-template-columns: minmax(240px, 1fr) 2.3fr;
@@ -357,7 +363,8 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .exhibit-wide .slider { grid-area: slider; }
   .exhibit-wide .viz-status { grid-area: status; }
   .exhibit-wide figcaption { grid-area: cap; }
-  .crust-foot { grid-template-columns: 1fr 1.25fr; gap: 56px; }
+  .formed { grid-template-columns: 1.1fr 1fr; gap: 32px 56px; margin-top: 128px; align-items: start; }
+  .formed-title { grid-column: 1 / -1; }
 }
 
 /* Real photographs (open-licence, credited under Sources). Captions say only what the picture shows. */
