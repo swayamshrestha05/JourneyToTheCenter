@@ -46,48 +46,12 @@
       "locator": null
     },
     {
-      "id": "himalaya-intro",
-      "order": 2,
-      "section": "Formation of the Himalayas",
-      "kind": "intro",
-      "claim": "Himalayan-Tibetan Plateau: currently the world’s largest active continent-continent collision; formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction",
-      "source": "guo2017",
-      "locator": null
-    },
-    {
-      "id": "himalaya-a",
-      "order": 2,
-      "section": "Formation of the Himalayas",
-      "kind": "characteristic",
-      "claim": "Indian plate: broke from Pangaea; moved north for about 80 million years before hitting southern Central Asia",
-      "source": "scharping2025",
-      "locator": null
-    },
-    {
-      "id": "himalaya-b",
-      "order": 2,
-      "section": "Formation of the Himalayas",
-      "kind": "characteristic",
-      "claim": "Collision: began 50–60 million years ago",
-      "source": "scharping2025",
-      "locator": null
-    },
-    {
       "id": "himalaya-c",
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "characteristic",
-      "claim": "Convergence: 40–50 mm/year; about half absorbed across the Himalaya",
+      "claim": "Plates still converging: 40–50 mm per year",
       "source": "turner2013",
-      "locator": null
-    },
-    {
-      "id": "himalaya-d",
-      "order": 2,
-      "section": "Formation of the Himalayas",
-      "kind": "characteristic",
-      "claim": "Subduction: nonuniform; Indian crust underthrusts southern Tibet",
-      "source": "guo2017",
       "locator": null
     },
     {
@@ -160,15 +124,6 @@
       "kind": "characteristic",
       "claim": "Base of the crust under the Himalayan collision zone: about 66–81 km deep, from seismic profiles",
       "source": "guo2017",
-      "locator": null
-    },
-    {
-      "id": "crust-c",
-      "order": 4,
-      "section": "Earth’s layers, structure, composition and minerals",
-      "kind": "characteristic",
-      "claim": "Inside the Himalaya: faults slice through much of the crust, separating squished, buried rocks scraped off the Indian plate",
-      "source": "scharping2025",
       "locator": null
     },
     {

@@ -21,7 +21,7 @@
     if (open) region.removeAttribute("data-collapsed");
     else region.setAttribute("data-collapsed", "");
     each('[aria-controls="' + id + '"]', function (c) { c.setAttribute("aria-expanded", open ? "true" : "false"); });
-    var label = document.querySelector('.read:not(.read-title)[aria-controls="' + id + '"] span');
+    var label = document.querySelector('.read[aria-controls="' + id + '"] span');
     if (label) {
       if (!label.dataset.label) label.dataset.label = label.textContent;
       label.textContent = open ? "Show less" : label.dataset.label;
