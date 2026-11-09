@@ -233,10 +233,12 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .g-body.scrubbing .g-mark { transition: none; }
 .g-col { position: relative; width: 14px; height: 190px; display: flex; flex-direction: column; flex: none; border-radius: 2px; }
 .g-col i { display: block; width: 100%; }
-.b-crust { flex: 100; min-height: 3px; background: #8a7564; }
-.b-upper { flex: 570; background: #7a3320; }
-.b-lower { flex: 2230; background: #9b3517; }
-.b-outer { flex: 2200; background: #e07a1f; border-radius: 0 0 2px 2px; }
+/* band heights are set by script.js from each layer's length on the page, so the slider moves at one speed */
+.b-summit { flex: 1; background: #a29db8; border-radius: 2px 2px 0 0; }
+.b-crust { flex: 1; background: #8a7564; }
+.b-upper { flex: 1; background: #7a3320; }
+.b-lower { flex: 1; background: #9b3517; }
+.b-outer { flex: 1; background: #e07a1f; border-radius: 0 0 2px 2px; }
 .g-mark {
   position: absolute;
   left: -6px;

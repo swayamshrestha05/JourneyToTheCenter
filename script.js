@@ -183,7 +183,9 @@
   var gCol = document.getElementById("g-col");
   var COL_KM = 5100; // the trail ends at the inner core boundary
   var gBody = document.getElementById("g-body");
-  var lastStop = null, lastReading = "", gaugeKm = 0;
+  var gBands = gCol.querySelectorAll("i");
+  var bandStops = ["crust", "upper-mantle", "lower-mantle", "outer-core"].map(function (id) { return document.getElementById(id); });
+  var lastStop = null, lastReading = "", lastBands = "", gaugeKm = 0;
   var fmt = new Intl.NumberFormat("en-US");
 
   var gaugeSigns = Array.prototype.slice.call(document.querySelectorAll(".sign[data-km]"));
@@ -218,6 +220,24 @@
     return keys[keys.length - 1][1];
   }
 
+  // the scroll position where the rail ends: the last trail sign on the reading line
+  function railEnd() { return scrollForKm(COL_KM) || 1; }
+
+  // each band is as tall as its layer is long on the page, measured where the gauge changes layer
+  function layoutBands(end) {
+    var probe = window.innerHeight * 0.55, edges = [0];
+    bandStops.forEach(function (st) {
+      edges.push(Math.max(0, Math.min(end, st.getBoundingClientRect().top + window.scrollY - probe)));
+    });
+    edges.push(end);
+    var sizes = [];
+    for (var i = 1; i < edges.length; i++) sizes.push(Math.round(edges[i] - edges[i - 1]));
+    var key = sizes.join();
+    if (key === lastBands) return;
+    lastBands = key;
+    sizes.forEach(function (size, n) { gBands[n].style.flexGrow = size; });
+  }
+
   function updateGauge() {
     // same line the trail's "here" marker rides on, so the gauge reads a sign's depth as the marker passes it
     var probe = window.innerHeight * 0.55;
@@ -226,14 +246,17 @@
       if (stops[i].getBoundingClientRect().top <= probe) cur = stops[i];
     }
     var km = depthAt(window.scrollY + probe, depthKeys());
-    gMark.style.top = (Math.max(0, Math.min(COL_KM, km)) / COL_KM * gCol.clientHeight - 1).toFixed(1) + "px";
+    // the column is a linear rail along the page, not a depth scale: one speed through every layer
+    var end = railEnd(), frac = Math.max(0, Math.min(1, window.scrollY / end));
+    gMark.style.top = (frac * gCol.clientHeight - 1).toFixed(1) + "px";
+    layoutBands(end);
     // metres of altitude above sea level, km of depth below it; temperature stays sourced per stop
     var reading = km < 0 ? fmt.format(Math.round(-km * 1000)) + " m" : fmt.format(Math.round(km)) + " km";
     if (cur.dataset.mode === "Altitude" && km >= 0) reading = "0 m";
     if (reading !== lastReading) {
       lastReading = reading;
       gDepth.textContent = reading;
-      gBody.setAttribute("aria-valuenow", Math.max(0, Math.round(km)));
+      gBody.setAttribute("aria-valuenow", Math.round(frac * 100));
       gBody.setAttribute("aria-valuetext", reading + (km < 0 ? " altitude" : " depth"));
     }
     gaugeKm = km;
@@ -267,15 +290,9 @@
     window.scrollTo({ top: top, behavior: smooth && !reduced ? "smooth" : "instant" });
   }
 
-  function kmAtPointer(clientY) {
-    var r = gCol.getBoundingClientRect();
-    var f = (clientY - r.top) / r.height;
-    return f < 0 ? null : Math.min(1, f) * COL_KM; // above the column = back to the summit
-  }
-
   function travelToPointer(clientY, smooth) {
-    var km = kmAtPointer(clientY);
-    travelTo(km === null ? 0 : scrollForKm(km), smooth);
+    var r = gCol.getBoundingClientRect();
+    travelTo(Math.max(0, Math.min(1, (clientY - r.top) / r.height)) * railEnd(), smooth);
   }
 
   var scrubbing = false, scrubMoved = false;
@@ -305,8 +322,11 @@
     var signKms = gaugeSigns.map(function (s) { return +s.dataset.km; });
     var km = gaugeKm, target, glide = true;
     switch (e.key) {
-      case "ArrowDown": case "ArrowRight": target = Math.min(COL_KM, Math.max(0, km) + 50); glide = false; break;
-      case "ArrowUp": case "ArrowLeft": target = km > 0 ? Math.max(0, km - 50) : -1; glide = false; break;
+      case "ArrowDown": case "ArrowRight": case "ArrowUp": case "ArrowLeft":
+        e.preventDefault();
+        var step = railEnd() / 50 * (e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : -1);
+        travelTo(Math.max(0, Math.min(railEnd(), window.scrollY + step)), false);
+        return;
       case "PageDown": target = signKms.filter(function (k) { return k > km + 0.5; })[0]; break;
       case "PageUp": target = signKms.filter(function (k) { return k < km - 0.5; }).pop(); break;
       case "Home": target = -1; break;
