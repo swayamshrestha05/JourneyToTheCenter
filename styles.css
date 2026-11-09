@@ -540,6 +540,7 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .inc-label { font-family: var(--display); font-weight: 700; font-size: 24px; fill: var(--ink); }
 @media (min-width: 1200px) {
   .inc-label { font-size: 18px; }
+  .inc-line { stroke: #d9480f; } /* reads on both the pale diamond and the dark backdrop */
 }
 .gem { transform-box: fill-box; transform-origin: center; transition: transform .7s var(--ease-out); }
 .exhibit-diamond.open .inc { opacity: 1; transform: none; }
