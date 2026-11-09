@@ -455,11 +455,7 @@
     var s = t < CONTACT - 0.02 ? 0 : t < CONTACT + 0.12 ? 1 : 2;
     if (s !== stage) {
       stage = s;
-      status.textContent = [
-        "The Neotethys Ocean floor sinks beneath Eurasia as India moves north.",
-        "Collision: India meets Eurasia. Collision began 50–60 million years ago.",
-        "Indian crust underthrusts southern Tibet and the Himalaya rise. The plates still converge at 40–50 mm a year."
-      ][s];
+      Array.prototype.forEach.call(status.children, function (c) { c.hidden = +c.dataset.stage !== s; });
     }
   }
   range.addEventListener("input", function () { renderPlates(range.value / 100); });
