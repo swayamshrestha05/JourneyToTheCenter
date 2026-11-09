@@ -538,6 +538,9 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .inc { opacity: 0; transform: scale(.4); transform-box: fill-box; transform-origin: center; transition: opacity .45s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--i) * 110ms); }
 .inc-line { stroke: var(--ink); stroke-width: 2; fill: none; }
 .inc-label { font-family: var(--display); font-weight: 700; font-size: 24px; fill: var(--ink); }
+@media (min-width: 1200px) {
+  .inc-label { font-size: 18px; }
+}
 .gem { transform-box: fill-box; transform-origin: center; transition: transform .7s var(--ease-out); }
 .exhibit-diamond.open .inc { opacity: 1; transform: none; }
 .exhibit-diamond.open .gem { transform: scale(1.06); }
