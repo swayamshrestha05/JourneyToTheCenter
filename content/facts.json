@@ -5,7 +5,7 @@
       "order": 1,
       "section": "Mount Everest",
       "kind": "intro",
-      "claim": "Everest is the highest point on Earth, and its summit rocks are uplifted ocean sediments full of marine fossils.",
+      "claim": "Everest: highest point on Earth; summit rocks are uplifted ocean sediments full of marine fossils",
       "source": "scharping2025",
       "locator": null
     },
@@ -14,7 +14,7 @@
       "order": 1,
       "section": "Mount Everest",
       "kind": "characteristic",
-      "claim": "Summit elevation is 8,849 m (29,032 ft), on the Nepal–China (Tibet) border",
+      "claim": "Summit elevation: 8,849 m (29,032 ft), on the Nepal–China (Tibet) border",
       "source": "scharping2025",
       "locator": null
     },
@@ -23,7 +23,7 @@
       "order": 1,
       "section": "Mount Everest",
       "kind": "characteristic",
-      "claim": "Winds are over 160 km/h (100 mph), temperatures regularly drop below −30°C (−22°F), and oxygen is about one third of the sea-level amount",
+      "claim": "Summit conditions: winds over 160 km/h (100 mph), temperatures regularly below −30°C (−22°F), oxygen about one third of the sea-level amount",
       "source": "scharping2025",
       "locator": null
     },
@@ -32,7 +32,7 @@
       "order": 1,
       "section": "Mount Everest",
       "kind": "characteristic",
-      "claim": "Still rising about 2 mm (0.08 in) per year, and fits evidence that the Indian plate is still subducting",
+      "claim": "Still rising: about 2 mm (0.08 in) per year; fits evidence that the Indian plate is still subducting",
       "source": "scharping2025",
       "locator": null
     },
@@ -41,7 +41,7 @@
       "order": 1,
       "section": "Mount Everest",
       "kind": "characteristic",
-      "claim": "Why Everest is the tallest and not a nearby peak is probably “just luck”",
+      "claim": "Why Everest is the tallest and not a nearby peak: probably “just luck”",
       "source": "scharping2025",
       "locator": null
     },
@@ -50,7 +50,7 @@
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "intro",
-      "claim": "The Himalayan-Tibetan Plateau is currently the world’s largest active continent-continent collision, formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction.",
+      "claim": "Himalayan-Tibetan Plateau: currently the world’s largest active continent-continent collision; formed when the Indian and Eurasian plates collided after the Neotethys Ocean closed by subduction",
       "source": "guo2017",
       "locator": null
     },
@@ -59,7 +59,7 @@
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "characteristic",
-      "claim": "The Indian plate broke from Pangaea and moved north for about 80 million years before hitting southern Central Asia",
+      "claim": "Indian plate: broke from Pangaea; moved north for about 80 million years before hitting southern Central Asia",
       "source": "scharping2025",
       "locator": null
     },
@@ -68,7 +68,7 @@
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "characteristic",
-      "claim": "Collision began 50–60 million years ago",
+      "claim": "Collision: began 50–60 million years ago",
       "source": "scharping2025",
       "locator": null
     },
@@ -77,7 +77,7 @@
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "characteristic",
-      "claim": "Plates converge at 40–50 mm/year, and about half of that is absorbed across the Himalaya",
+      "claim": "Convergence: 40–50 mm/year; about half absorbed across the Himalaya",
       "source": "turner2013",
       "locator": null
     },
@@ -86,7 +86,7 @@
       "order": 2,
       "section": "Formation of the Himalayas",
       "kind": "characteristic",
-      "claim": "Subduction is nonuniform and Indian crust underthrusts southern Tibet",
+      "claim": "Subduction: nonuniform; Indian crust underthrusts southern Tibet",
       "source": "guo2017",
       "locator": null
     },
@@ -95,7 +95,7 @@
       "order": 3,
       "section": "Plate tectonics and mantle convection",
       "kind": "intro",
-      "claim": "Heat from Earth’s interior drives slow flow in the mantle, and that flow moves the plates.",
+      "claim": "Mantle flow: slow, driven by heat from Earth’s interior; this flow moves the plates",
       "source": "guerrero2025",
       "locator": null
     },
@@ -104,7 +104,7 @@
       "order": 3,
       "section": "Plate tectonics and mantle convection",
       "kind": "characteristic",
-      "claim": "Interior heat sustains plate tectonics, which shape Earth’s surface over billions of years",
+      "claim": "Interior heat: sustains plate tectonics, which shape Earth’s surface over billions of years",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -113,7 +113,7 @@
       "order": 3,
       "section": "Plate tectonics and mantle convection",
       "kind": "characteristic",
-      "claim": "Cold sheets of downwelling material (“cold curtains”) sink into the deep interior, imitating subducted slabs",
+      "claim": "“Cold curtains”: cold sheets of downwelling material sink into the deep interior, imitating subducted slabs",
       "source": "guerrero2025",
       "locator": null
     },
@@ -122,7 +122,7 @@
       "order": 3,
       "section": "Plate tectonics and mantle convection",
       "kind": "characteristic",
-      "claim": "Plate motion can change abruptly: in a convection model, a reorganization took about 6–8 million years as heat built up around a mature downwelling until its buoyancy overcame the downward pull and pushed a plate off course",
+      "claim": "Plate motion: can change abruptly; in a convection model, a reorganization took about 6–8 million years as heat built up around a mature downwelling until its buoyancy overcame the downward pull and pushed a plate off course",
       "source": "guerrero2025",
       "locator": null
     },
@@ -131,7 +131,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "intro",
-      "claim": "Earth’s interior is layered into crust, mantle, liquid outer core and solid inner core.",
+      "claim": "Earth’s interior: crust, mantle, liquid outer core, solid inner core",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -149,7 +149,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "The crust beneath the Tibetan Plateau is twice as thick as the global average",
+      "claim": "Crust beneath the Tibetan Plateau: twice the global average thickness",
       "source": "guo2017",
       "locator": null
     },
@@ -158,7 +158,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "Seismic profiles across the Himalayan collision zone place the base of the crust at about 66–81 km depth",
+      "claim": "Base of the crust under the Himalayan collision zone: about 66–81 km deep, from seismic profiles",
       "source": "guo2017",
       "locator": null
     },
@@ -167,7 +167,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "Inside the Himalaya, faults slice through much of the crust, separating squished, buried rocks scraped off the Indian plate",
+      "claim": "Inside the Himalaya: faults slice through much of the crust, separating squished, buried rocks scraped off the Indian plate",
       "source": "scharping2025",
       "locator": null
     },
@@ -176,7 +176,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "The crust needed to support Everest’s elevation is probably already somewhat at its maximum thickness; any taller and it may move or change, causing the mountain to sink",
+      "claim": "Crust under Everest: thickness needed to support its elevation is probably already somewhat at a maximum; any taller and it may move or change, causing the mountain to sink",
       "source": "scharping2025",
       "locator": null
     },
@@ -185,7 +185,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "Mantle: extends to 2,900 km depth from the crust, with a seismic discontinuity at 410 km and the top of the lower mantle at 670 km",
+      "claim": "Mantle: extends to 2,900 km depth from the crust; seismic discontinuity at 410 km; top of the lower mantle at 670 km",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -194,7 +194,7 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "Minerals: the 410 km boundary is tied to the olivine-wadsleyite transition; a 420–440 km diamond inclusion holds garnet, 10-Å phase, ilmenite and liebermannite",
+      "claim": "Minerals: 410 km boundary tied to the olivine-wadsleyite transition; a 420–440 km diamond inclusion holds garnet, 10-Å phase, ilmenite and liebermannite",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -203,7 +203,16 @@
       "order": 4,
       "section": "Earth’s layers, structure, composition and minerals",
       "kind": "characteristic",
-      "claim": "Core: the outer core is liquid iron-nickel, and the inner core boundary lies at 5,100 km depth",
+      "claim": "Outer core: liquid iron-nickel",
+      "source": "huang2025",
+      "locator": "p. 437"
+    },
+    {
+      "id": "layers-e",
+      "order": 4,
+      "section": "Earth’s layers, structure, composition and minerals",
+      "kind": "characteristic",
+      "claim": "Inner core boundary: 5,100 km depth",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -212,7 +221,7 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "intro",
-      "claim": "The deeper we go, the hotter it gets.",
+      "claim": "Temperature: rises with depth",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -221,7 +230,7 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "characteristic",
-      "claim": "Earth’s interior is heated by two sources: residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium.",
+      "claim": "Earth’s heat: two sources, residual heat from Earth’s formation and the decay of radioactive isotopes such as potassium",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -230,7 +239,16 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "characteristic",
-      "claim": "Bottom of tectonic plates (up to 200 km deep): 1,300–1,500°C; 410 km discontinuity: about 1,560°C",
+      "claim": "Bottom of tectonic plates (up to 200 km deep): 1,300–1,500°C",
+      "source": "huang2025",
+      "locator": "p. 437"
+    },
+    {
+      "id": "temperature-f",
+      "order": 5,
+      "section": "Temperature and heat sources",
+      "kind": "characteristic",
+      "claim": "410 km discontinuity: about 1,560°C",
       "source": "huang2025",
       "locator": "p. 437"
     },
@@ -248,7 +266,7 @@
       "order": 5,
       "section": "Temperature and heat sources",
       "kind": "characteristic",
-      "claim": "Base of the mantle (2,900 km): about 2,300°C, then about 3,700°C in the outer core",
+      "claim": "Base of the mantle (2,900 km): about 2,300°C; outer core: about 3,700°C",
       "source": "huang2025",
       "locator": "p. 437"
     },

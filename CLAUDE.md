@@ -33,7 +33,8 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 
 ## Content rules (the core constraint)
 
-- `content/facts.json` (29 claims) + `content/sources.json` (5 Chicago-style sources) are the **only** source of scientific statements. Never write geology facts, numbers, images or quotes from memory; a gap stays a visible gap.
+- `content/facts.json` (31 claims) + `content/sources.json` (5 Chicago-style sources) are the **only** source of scientific statements. Never write geology facts, numbers, images or quotes from memory; a gap stays a visible gap.
+- Facts are written as terse notes ("Topic: detail", no closing period), at the user's request on 2026-11-08. Keep hedges such as "about" and "probably", and keep new claims in this form.
 - `content/design.json` is presentation notes only — nothing in it may be shown as a scientific claim.
 - Each fact appears on the page as an element with `data-fact="<id>"` whose text matches the `claim` verbatim (trailing period optional, HTML entities/whitespace normalised). `check_page.py` fails if any claim is reworded or removed, so edit the claim in `facts.json` and the page together.
 - Sources appear only as a Chicago list at the end of the page, inside a dropdown (`details.sources`) that starts closed.
@@ -56,7 +57,7 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
   - `#descent` (sea level) is a stop with no sourced temperature, so the gauge shows "—" rather than an invented value. Each layer opens with a `dl.layer-card` answering how deep, how hot and what it's like, using sourced values only.
   - Adding a stop = add a section with these attributes (and a sign with `data-km`); the gauge picks it up.
 - **Trail**: an SVG (`#trail`) built by `buildTrail()` as a Catmull-Rom curve through the trail signs (`.sign` buttons) and the summit anchor in the hero Everest SVG; revealed on scroll via a stroke-dash mask (`#trail-mask`). The `#here` marker rides it. Rebuilt (debounced) on resize.
-- **Signs / "more" facts**: each `.sign[data-sign]` toggles its stop's `.more` list (`aria-controls`/`aria-expanded`); extra facts live there collapsed. The outer core sign is a plain marker (`.sign-static`) with no list to open; it still sets the trail point and the gauge depth.
+- **Signs / "more" facts**: each `.sign[data-sign]` toggles its stop's `.more` list (`aria-controls`/`aria-expanded`); extra facts live there collapsed. The upper mantle, outer core and inner core signs are plain markers (`.sign-static`) with no list to open; they still set the trail point and the gauge depth.
 - **Exhibits**: the plate-collision SVG (`#plates`, driven by drag or `#plates-range` via `renderPlates(t)`) and the diamond-inclusion inspector (`#diamond-exhibit`).
 - **Canvas scenes**: `canvas.fx[data-fx]` elements become `Scene` instances (`snow`, `convection`, `molten`) animated in one shared `loop()`.
 - **Reduced motion** (`prefers-reduced-motion`): static scenes and fully drawn trail; keep this working when touching animation code. Keyboard must reach every sign and control.

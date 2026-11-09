@@ -390,7 +390,7 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .formed-grid { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
   .formed-facts { grid-template-columns: 1fr 1fr; column-gap: 56px; }
   .more.formed-body .formed-facts li:first-child { border-top: 1px solid var(--line); }
-  .formed-facts li:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  .more.formed-body .formed-facts li:last-child { grid-column: 1 / -1; }
 }
 
 /* Real photographs (open-licence, credited under Sources). Captions say only what the picture shows. */
@@ -407,6 +407,8 @@ a { color: var(--magma); text-underline-offset: .2em; }
   .crust-top { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
   .crust-top .layer-head { max-width: none; }
   .crust-top .formed-facts { grid-column: 1 / -1; }
+  .crust-top .facts.formed-facts { grid-template-columns: repeat(3, 1fr); }
+  .crust-top .formed-facts li { border-bottom: 1px solid var(--line); }
 }
 
 /* Upper mantle: the ladder becomes a depth ruler across the width (see mineral ladder); diamond moves right */
@@ -442,6 +444,13 @@ a { color: var(--magma); text-underline-offset: .2em; }
 .inner-stage .stat { justify-content: center; }
 .inner-stage .read { justify-self: center; }
 .inner-stage .facts li { text-align: left; }
+/* the orb sits beside its facts, so the section is no longer the longest with the least in it */
+@media (min-width: 1200px) {
+  .inner-stage { grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; justify-items: stretch; }
+  .inner-stage .orb-wrap { max-width: 400px; justify-self: center; }
+  .inner-stage .facts-col { justify-items: start; text-align: left; margin-top: 0; }
+  .inner-stage .stat { justify-content: flex-start; }
+}
 
 .facts-col { display: grid; gap: 22px; align-content: start; max-width: 62ch; }
 .facts { list-style: none; margin: 0; padding: 0; display: grid; }
