@@ -37,7 +37,7 @@ On Windows the `-X utf8` flag is required (otherwise JSON decoding fails). There
 - Facts are written as terse notes ("Topic: detail", no closing period), at the user's request on 2026-11-08. Keep hedges such as "about" and "probably", and keep new claims in this form.
 - Captions that change with an exhibit are facts too: each stage is a `data-fact` span in the HTML that `script.js` shows or hides, so no scientific text lives in `script.js`.
 - `content/design.json` is presentation notes only — nothing in it may be shown as a scientific claim.
-- Each fact appears on the page as an element with `data-fact="<id>"` whose text matches the `claim` verbatim (trailing period optional, HTML entities/whitespace normalised). `check_page.py` fails if any claim is reworded or removed, so edit the claim in `facts.json` and the page together.
+- Each fact appears on the page as an element with `data-fact="<id>"` whose text matches the `claim` verbatim (trailing period and colons optional, HTML entities/whitespace normalised). `check_page.py` fails if any claim is reworded or removed, so edit the claim in `facts.json` and the page together.
 - Sources appear only as a Chicago list at the end of the page, inside a dropdown (`details.sources`) that starts closed.
 - No centre-of-Earth depth or temperature (unsourced): the journey ends at the inner-core boundary (5,100 km). The outer core is molten iron-nickel, never "lava".
 - Illustrative visuals must never read as measured data.
